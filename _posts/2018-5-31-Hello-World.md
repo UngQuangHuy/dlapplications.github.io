@@ -1,6 +1,12 @@
 # Welcome to dl_ap
 
-## What are we
+## How to write new post
+
+go to "_posts" directory. 
+then create a new file which have name in the following format : "YYYY-MM-DD-Title.md"
+
+Then write stuff and commit.
+
 
 ## Why we are here
 
