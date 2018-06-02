@@ -28,11 +28,11 @@ description: Slogan của nhóm
 
 # List of links in the navigation bar
 navbar-links:
-  About Me: "aboutme"
+  About Us: "aboutme"
   Resources:
     - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
     - Learn markdown: "http://www.markdowntutorial.com/"
-    - GitHub Pages: "https://pages.github.com/"
+    - GitHub Pages: "https://github.com/orgs/dlapplications/teams/dl_ap"
   Author's home: "http://deanattali.com"
 
 # Image to show in the navigation bar - image must be a square (width = height)
@@ -79,7 +79,7 @@ social-network-links:
   rss: true
   email: "someone@example.com"
   facebook: daattali
-  github: daattali
+  github: orgs/dlapplications/teams/dl_ap
   twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
@@ -99,7 +99,7 @@ social-network-links:
 share-links-active:
   twitter: true
   facebook: true
-  google: false
+  google: true
   linkedin: true
 
 # How to display the link to the website in the footer
@@ -109,7 +109,7 @@ url-pretty: "MyWebsite.com"  # eg. "deanattali.com/beautiful-jekyll"
 # --- Web Statistics Section --- #
 
 # Fill in your Google Analytics ID to track your website using GA
-#google_analytics: ""
+google_analytics: ""
 
 # Google Tag Manager ID
 #gtm: ""
