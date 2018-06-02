@@ -2,9 +2,9 @@
 layout: post
 title: Hướng dẫn post bài
 subtitle: Làm thế nào để viết một bài post chuẩn và đẹp
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
+tags: [tutorial]
+bigimg: /img/path.jpg
+image: /img/hello_world.jpeg
 ---
 
 Làm theo những bước sau để viết bài
