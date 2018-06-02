@@ -1,16 +1,17 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About dl_ap
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+Chào mừng các bạn đã đến với trang wiki của nhóm [Deep learning và ứng dụng](https://www.facebook.com/Deep-learning-v%C3%A0-%E1%BB%A9ng-d%E1%BB%A5ng-204704190126483/) . 
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
+### Tiêu chí hoạt động
 
-### my history
+Nhóm được thành lập với mục đích chia sẻ, trao đổi kiến thức về  ngành Deep learning và những ứng dụng của nó trong thực tế  . Nhóm hy vọng thông qua những bài viết ở trang wiki này, các bạn sẽ có một cái nhìn thực tế, rõ nét hơn về  ngành Deep learning. Từ đó có thể  tự mình sử dụng nhuần nhuyễn Deep Learning như một công cụ mới để giải quyết hay tối ưu hóa những vấn đề nan giải trong công việc và cuộc sống. 
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](http://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+### Thành viên trong nhóm
+
+### Liên hệ
+
+[email@domain.com](mailto:email@domain.com)

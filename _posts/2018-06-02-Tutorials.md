@@ -1,7 +1,7 @@
 ---
 layout: post
 title: New tech to organize your daily tasks.
-categories: [Tech, Personal]
+tags: [tutorial, dl]
 ---
 
 # Tutorials

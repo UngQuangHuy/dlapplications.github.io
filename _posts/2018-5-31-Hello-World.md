@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Top innovations in technology.
-categories: Tech
+tags: [tutorial, dl]
 ---
 
 # Welcome to dl_ap
