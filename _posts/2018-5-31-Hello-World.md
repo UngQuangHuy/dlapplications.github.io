@@ -1,3 +1,9 @@
+---
+layout: post
+title: Top innovations in technology.
+categories: Tech
+---
+
 # Welcome to dl_ap
 
 ## How to write new post

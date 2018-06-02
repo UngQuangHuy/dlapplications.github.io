@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Tutorials"
-categories: [tutorial]
+title: New tech to organize your daily tasks.
+categories: [Tech, Personal]
 ---
 
 # Tutorials
