@@ -1,4 +1,12 @@
-# Hướng dẫn sử dụng Deep Learning ^^
+---
+layout: post
+title: Hướng dẫn sử dụng Deep Learning
+subtitle: Quy trình chung cho phát triển sử dụng Deep Learning
+tags: [tutorial, begin]
+---
+
+
+# Hướng dẫn sử dụng Deep Learning 
 
 ## Tóm tắt
 
