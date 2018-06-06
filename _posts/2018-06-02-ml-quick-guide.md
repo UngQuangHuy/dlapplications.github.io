@@ -39,10 +39,55 @@ Ví dụ về một problem phức tạp: đọc chữ trong ảnh
 
 ![Scene_text](/img/20180603/scene_text.png)*Scene text recognition*
 
+Một lớp hay một model Deep Learning có thể hiểu theo cách đơn giản nhất là một hộp đen: nhận dữ liệu ở đầu vào, chạy ra kết quả ở đầu ra. Tại đây chúng ta sẽ xây dựng cấu trúc của cái hộp. Sau đấy thông qua quá trình training để thay đổi tính chất bên trong.
+
+![Slotmachine](/img/20180603/Slotmachine.png)*Đút xu vào, cho ra quà, chỉnh được tỉ lệ thắng . Giống Deep Learning nhỉ ?*
+
 #### 2. Thu thập dữ liệu (Data Gathering)
 
 Sau khi đã định nghĩa vấn đề xong, chúng ta sẽ bắt đầu tiến hành thu thập nguồn dữ liệu tương ứng. Ví dụ như ở trong problem nhận diện khuôn mặt ở trên, chúng ta sẽ phải thu thập dữ liệu là khuôn mặt con người. Số lượng dữ liệu càng nhiều càng tốt. Ở một số nơi con số có thể lên tới hàng triệu.
 
+Mỗi một loại dữ liệu thu thập được chúng ta sẽ đánh dấu bằng một nhãn (label) riêng. Ví dụ với label là "mèo", data tương ứng sẽ là :
+
+![cat_1](/img/20180603/cat_1.jpg)*mèo*
+
+Trong quá trình thu thập, việc lẫn các nhiễu (noise) vào là không thể tránh khỏi. Với cùng label là "mèo", data như sau có thể lẫn vào
+
+![cat_2](/img/20180603/cat_2.png)*đây cũng là con mèo*
+
 #### 3. Lọc dữ liệu (Data Parsing)
 
-Dữ liệu 
+Quá trình training ở bước 4 yêu cầu cặp data-label phải đúng nhất có thể. Vì thế dữ liệu sau khi thu thập phải lọc qua một lần để loại bỏ nhiễu (noise), giữ cho sạch (clean) nhất có thể. Thường tiến hành bằng tay. Trong một số trường hợp đặc biệt có thể dùng một số thuật trong để phân mảnh dữ liệu để loại bỏ bớt nhiễu.
+
+Dữ liệu sau khi lọc xong sẽ được chia ra làm 3 phần : train, validation và test. Tỉ lệ thường dùng khi chia là 7-1-2. Đến bước này chúng ta đã có 1 dataset hoàn chỉnh.
+
+Quá trình tạo một dataset rất tốn công sức và thời gian. Thường mọi người sẽ không tạo mới mà dùng những dataset đã được công bố. Trong các tutorial tiếp theo của nhóm cũng sẽ theo xu thế này.
+
+#### Training (tạo mô hình)
+
+Sử dụng dataset ở bước 3 chúng ta sẽ tiến hành training để thay đổi tính chất của hộp đen trong bước 1. 
+
+Quá trình training là bước nhồi liên tục cặp data-label vào trong model, để thay đổi tính chất bên trong, hướng đầu ra của model đến label mong muốn. Quá trình này có thể kéo dài từ vài tiếng đến vài tuần. Để rút ngắn thời gian training, quá trình tính toán (train) sẽ được phân luồng trên nhiều GPUs.
+
+![ngong](/img/20180603/ngong.jpeg)*Hình ảnh của tôi mỗi lúc training một model*
+
+Trong quá trình train, độ chính xác (accuracy) của model sẽ được kiểm tra bằng val data ở bước 3. Nếu không có vấn đề gì thì accuracy sẽ tăng dần cho đến khi đạt một ngưỡng xác định Lúc này quá trình training sẽ dừng lại.
+
+![ngong](/img/20180603/caffe_model_1_learning_curve.png)*Đường màu xanh chỉ ra rằng acccuracy đã tới ngưỡng (limit)*
+
+
+#### Testing (kiểm tra độ chính xác)
+
+Sau khi train xong chúng ta sẽ tiến hành bước cuối cùng là testing để tính accuracy cho model. Đây là bước đơn giản nhất, chỉ cần nhồi test data vào model sau đó so sánh giữa label ở đầu ra và label vốn có của test data. Ví dụ: test data có 100, khi test thấy có 80 label là giống với label vốn có, như vậy model của chúng ta có độ chính xác là 80%.
+
+Khi model không đạt accuracy như mong muốn thì thường sẽ dùng 2 cách sau.
+
+1. Tăng lượng data để train song song với việc lọc lại để train data gần với test data nhất. 
+
+![cat_1](/img/20180603/cat_1.jpg)*muốn nhận diện con "mèo" này*
+
+![cat_2](/img/20180603/cat_2.png)*tất nhiên không thể dùng con "mèo" này để train rồi*
+
+2. Định nghĩa lại vấn đề , thay đổi model sang cấu trúc phù hợp hơn. (Vấn đề nào dùng model gì, nhóm sẽ cập nhật trong bài viết tới)
+
+#### Deploying (triển khai trên sản phẩm)
