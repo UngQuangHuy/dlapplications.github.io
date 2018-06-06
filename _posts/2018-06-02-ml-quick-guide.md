@@ -33,15 +33,21 @@ Deep Learning là một ngành nhỏ của Machine Learning. Vì thế cả hai 
 
 Ví dụ về một problem đơn giản: nhận diện khuôn mặt
 
-![Face detection](/img/20180603/Face_detection.png)*Face detection*
+![Face detection](/img/20180603/Face_detection.png)
+
+*Face detection*
 
 Ví dụ về một problem phức tạp: đọc chữ trong ảnh 
 
-![Scene_text](/img/20180603/scene_text.png)*Scene text recognition*
+![Scene_text](/img/20180603/scene_text.png)
+
+*Scene text recognition*
 
 Một lớp hay một model Deep Learning có thể hiểu theo cách đơn giản nhất là một hộp đen: nhận dữ liệu ở đầu vào, chạy ra kết quả ở đầu ra. Tại đây chúng ta sẽ xây dựng cấu trúc của cái hộp. Sau đấy thông qua quá trình training để thay đổi tính chất bên trong.
 
-![Slotmachine](/img/20180603/Slotmachine.png)*Đút xu vào, cho ra quà, chỉnh được tỉ lệ thắng . Giống Deep Learning nhỉ ?*
+![Slotmachine](/img/20180603/Slotmachine.png)
+
+*Đút xu vào, cho ra quà, chỉnh được tỉ lệ thắng . Giống Deep Learning nhỉ ?*
 
 #### 2. Thu thập dữ liệu (Data Gathering)
 
@@ -49,11 +55,15 @@ Sau khi đã định nghĩa vấn đề xong, chúng ta sẽ bắt đầu tiến
 
 Mỗi một loại dữ liệu thu thập được chúng ta sẽ đánh dấu bằng một nhãn (label) riêng. Ví dụ với label là "mèo", data tương ứng sẽ là :
 
-![cat_1](/img/20180603/cat_1.jpg)*mèo*
+![cat_1](/img/20180603/cat_1.jpg)
+
+*Đây là con "mèo"*
 
 Trong quá trình thu thập, việc lẫn các nhiễu (noise) vào là không thể tránh khỏi. Với cùng label là "mèo", data như sau có thể lẫn vào
 
-![cat_2](/img/20180603/cat_2.png)*đây cũng là con mèo*
+![cat_2](/img/20180603/cat_2.png)
+
+*đây cũng là con "mèo"*
 
 #### 3. Lọc dữ liệu (Data Parsing)
 
@@ -69,7 +79,9 @@ Sử dụng dataset ở bước 3 chúng ta sẽ tiến hành training để tha
 
 Quá trình training là bước nhồi liên tục cặp data-label vào trong model, để thay đổi tính chất bên trong, hướng đầu ra của model đến label mong muốn. Quá trình này có thể kéo dài từ vài tiếng đến vài tuần. Để rút ngắn thời gian training, quá trình tính toán (train) sẽ được phân luồng trên nhiều GPUs.
 
-![ngong](/img/20180603/ngong.jpeg)*Hình ảnh của tôi mỗi lúc training một model*
+![ngong](/img/20180603/ngong.jpeg)
+
+*Hình ảnh của tôi mỗi lúc training một model*
 
 Trong quá trình train, độ chính xác (accuracy) của model sẽ được kiểm tra bằng val data ở bước 3. Nếu không có vấn đề gì thì accuracy sẽ tăng dần cho đến khi đạt một ngưỡng xác định Lúc này quá trình training sẽ dừng lại.
 
@@ -84,10 +96,27 @@ Khi model không đạt accuracy như mong muốn thì thường sẽ dùng 2 c�
 
 1. Tăng lượng data để train song song với việc lọc lại để train data gần với test data nhất. 
 
-![cat_1](/img/20180603/cat_1.jpg)*muốn nhận diện con "mèo" này*
+![cat_1](/img/20180603/cat_1.jpg)
 
-![cat_2](/img/20180603/cat_2.png)*tất nhiên không thể dùng con "mèo" này để train rồi*
+*muốn nhận diện con "mèo" này*
+
+![cat_2](/img/20180603/cat_2.png)
+
+*tất nhiên không thể dùng con "mèo" này để train rồi*
 
 2. Định nghĩa lại vấn đề , thay đổi model sang cấu trúc phù hợp hơn. (Vấn đề nào dùng model gì, nhóm sẽ cập nhật trong bài viết tới)
 
 #### Deploying (triển khai trên sản phẩm)
+
+Model đã train xong chúng ta có thể mang lên chạy trên các thiết bị đầu cuối. Ví dụ như các board, mạch nhúng, mobile, FPGA, ... 
+
+Các thiết bị đầu cuối bị hạn chế về cấu hình phần cứng nên thường được tăng tốc bằng các framework riêng biệt. Trong những trường hợp cá biệt khi có thêm hạn chế về năng lượng tiêu thụ, model sẽ được compile trực tiếp lên trên một mạch FPGA hay một chip LSI. 
+
+![cat_2](/img/20180603/ultra96-front-sd.png)*Ví dụ về một board kèm FPGA chuyên cho Deep Learning: Ultra96*
+
+
+(Đây cũng là một bước rất khó và thú vi, nhóm sẽ cập nhật trong bài viết tới)
+
+## Kết bài
+
+Tới đây chúng ta đã biết được một model Deep Learning được tạo ra như thế nào. Rõ ràng Deep Learning là một công cụ mạnh có thể giúp chúng ta giải quyết nhiều vấn đề hiện hữu. Tuy nhiên để công cụ này phát huy hết sức mạnh vốn có, việc tuân thủ theo 6 bước kể trên là điều tiên quyết. 
