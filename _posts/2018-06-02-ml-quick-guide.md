@@ -18,7 +18,7 @@ AI (Artificial intelligent, trí tuệ nhân tạo) nói chung và Deep Learning
 
 ## Quy trình phát triển của Deep Learning
 
-Deep Learning là một ngành nhỏ của Machine Learning. Vì thế cả hai có chung một quy trình phát triển như sau.
+Deep Learning là một ngành nhỏ của Machine Learning. Cả hai có chung một quy trình phát triển như sau. Khi phát triển một ứng dụng sử dụng Deep Learning nói riêng mà Machine Learning nói chung thì đều phải đi qua những bước như thế. 
 
 1. Định nghĩa vấn đề (Problem definition)
 2. Thu thập dữ liệu (Data Gathering)
@@ -26,6 +26,12 @@ Deep Learning là một ngành nhỏ của Machine Learning. Vì thế cả hai 
 4. Training (tạo mô hình)
 5. Testing (kiểm tra độ chính xác)
 6. Deploying (triển khai trên sản phẩm)
+
+Đây là qui trình chung sử dụng trong cả nghiên cứu (research) và phát triển (development). Nếu các bạn có thời gian, nên xem thêm [How startup do AI](https://www.youtube.com/watch?v=9bbS-trc8ys) để thấy rõ hơn điều này.
+
+Hình dưới đây lấy từ [Facebook Machine Learning guide (Ads team)](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/) . Đây là team chuyên về đề xuất quảng cáo (Ads), tùy vào lịch sử truy cập web mà họ sẽ đề xuất một quảng cáo tương ứng. Chúng ta thấy họ cũng đi theo qui trình như trên.
+
+![Scene_text](/img/20180603/ml-academy-hero-graphic.png)
 
 #### 1. Định nghĩa vấn đề (Problem Definition)
 
@@ -119,7 +125,8 @@ Các thiết bị đầu cuối bị hạn chế về cấu hình phần cứng 
 
 ## Kết bài
 
-Tới đây chúng ta đã biết được một model Deep Learning được tạo ra như thế nào. Rõ ràng Deep Learning là một công cụ mạnh có thể giúp chúng ta giải quyết nhiều vấn đề hiện hữu. Tuy nhiên để công cụ này phát huy hết sức mạnh vốn có, việc tuân thủ theo 6 bước kể trên là điều tiên quyết. 
+Tới đây chúng ta đã biết được một model Deep Learning được tạo ra như thế nào. Rõ ràng Deep Learning là một công cụ mạnh có thể giúp chúng ta giải quyết nhiều vấn đề hiện hữu. Tuy nhiên để công cụ này phát huy hết sức mạnh vốn có, việc tuân thủ theo quy trình kể trên là điều tiên quyết. 
 
-[Link tham khảo: ](https://research.fb.com/the-facebook-field-guide-to-machine-learning-video-series/)
+
+
 
