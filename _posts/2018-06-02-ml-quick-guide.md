@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Hướng dẫn sử dụng Deep Learning
-subtitle: Quy trình chung cho phát triển sử dụng Deep Learning
-tags: [tutorial, begin]
+subtitle: Deep Learning và Ứng Dụng Phần 2.
+tags: [tutorial, begin, dl_ap]
 ---
 
 
@@ -127,5 +127,5 @@ Các thiết bị đầu cuối bị hạn chế về cấu hình phần cứng 
 
 Tới đây chúng ta đã biết được một model Deep Learning được tạo ra như thế nào. Rõ ràng Deep Learning là một công cụ mạnh có thể giúp chúng ta giải quyết nhiều vấn đề hiện hữu. Tuy nhiên để công cụ này phát huy hết sức mạnh vốn có, việc tuân thủ theo quy trình kể trên là điều tiên quyết. 
 
-vugia.truong
+Vũ Gia Trường.
 
