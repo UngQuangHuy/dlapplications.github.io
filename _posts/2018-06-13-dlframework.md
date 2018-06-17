@@ -3,6 +3,7 @@ layout: post
 title: Deep Learning Framework
 subtitle: Deep Learning và Ứng Dụng Phần 2.
 tags: [tutorial, begin, dl_ap]
+comment: true
 ---
 
 # Sơ lược về các Deep Learning Framework
