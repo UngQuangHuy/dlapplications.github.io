@@ -125,7 +125,7 @@ google_analytics: ""
 
 # --- Misc --- #
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
-#disqus: ""
+disqus: "https-dlapplications-github-io"
 
 # Facebook App ID
 # fb_app_id: ""
