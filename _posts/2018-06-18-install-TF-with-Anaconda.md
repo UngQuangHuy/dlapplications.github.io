@@ -7,6 +7,8 @@ math: true
 ---
 ### 1. Giới thiệu <a name="intro"></a>
 Như đã nói nhiều ở các post trước, muốn làm deep learning thì nên sử dụng tensorflow vì framework này được phát triển bởi google nên bạn sẽ được hỗ trợ rất nhiều từ google cũng như cộng đồng sử dụng tensorflow. Bọn mình tính làm tutorial hướng dẫn cụ thể cách cài Tensorflow trên Anaconda, tuy nhiên google 1 cái thì có khá nhiều clip hướng dẫn, nên ở đây mình sẽ sử dụng lại một clip hướng dẫn trong Deep learning course (cs-hcmup-2016) và giải thích rõ vì sao nên xài tensorflow trên môi trường ảo và giải thích các lệnh cơ bản trên Anacoda để bạn có thể làm việc. 
+[![Hướng dẫn cài tensorflow trên môi trường ảo Anaconda](https://en.wikipedia.org/wiki/Anaconda_(Python_distribution)#/media/File:Anaconda_Logo.png)](https://www.youtube.com/watch?v=t_pxnHpRszg)
+
 
 ### 2. Vì sao chúng ta nên sử dụng Anaconda <a name="notation"></a>
 
