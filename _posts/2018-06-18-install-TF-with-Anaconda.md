@@ -11,6 +11,8 @@ Như đã nói nhiều ở các post trước, muốn làm deep learning thì n�
 <iframe width="560" height="315" src="https://www.youtube.com/watch?v=t_pxnHpRszg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  
 
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dHHmUF9gs70" frameborder="0" allowfullscreen></iframe>
+
 ### 2. Vì sao chúng ta nên sử dụng Anaconda <a name="notation"></a>
 
 Tensorflow ra đời vào tháng 11 năm 2015, tính đến này được khoảng 2 năm rưỡi.
