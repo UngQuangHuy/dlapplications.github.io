@@ -6,15 +6,16 @@ tags: [cài đặt, tensorflow, môi trường ảo anaconda]
 math: true
 ---
 ### 1. Giới thiệu <a name="intro"></a>
-Như đã nói nhiều ở các post trước, muốn làm deep learning thì nên sử dụng tensorflow vì framework này được phát triển bởi google nên bạn sẽ được hỗ trợ rất nhiều từ google cũng như cộng đồng sử dụng tensorflow. Bọn mình tính làm tutorial hướng dẫn cụ thể cách cài Tensorflow trên Anaconda, tuy nhiên google 1 cái thì có khá nhiều clip hướng dẫn, nên ở đây mình sẽ sử dụng lại một clip hướng dẫn trong Deep learning course (cs-hcmup-2016) và giải thích rõ vì sao nên xài tensorflow trên môi trường ảo và giải thích các lệnh cơ bản trên Anacoda để bạn có thể làm việc trong hệ điều hành linux.  
+Như đã nói nhiều ở các post trước, muốn làm deep learning thì nên sử dụng framework. Như đánh gia trong bài Sơ lược về các Deep Learning Framework thì tensorflow, pytorch là 2 framework dễ sử dụng, có cộng đồng sử dụng rất lớn. Như vậy bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi. Trong post này mình xin giới thiệu cách cài đặt 2 framework này, và đây cũng là 2 framework bọn mình chọn để hướng dẫn các bạn làm deep learning trong tương lai.
+Bạn có thể tham khảo clip hướng dẫn cụ thể cách cài Tensorflow trên Anaconda trong Deep learning course (cs-hcmup-2016). Ở đây mình sẽ giải thích rõ vì sao nên xài framework trên môi trường ảo, cơ bản trên Anacoda và làm sao để cài đặt tensorflow và pytorch trên Anacoda để bạn có thể làm việc trong hệ điều hành linux.  
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/t_pxnHpRszg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### 2. Vì sao chúng ta nên sử dụng Anaconda <a name="notation"></a>
 
 Tensorflow ra đời vào tháng 11 năm 2015, tính đến này được khoảng 2 năm rưỡi.
-Version hiện tại là 1.8. Mình bắt đầu sử dụng Tensorflow khoảng hơn 1 năm trước, lúc đó nó đang ở version 1.0. Như thế trong hơn 1 năm Tensorflow dã update version 8 lần. Do tính chất là một framework opensource, có sự đóng góp rất lớn từ cộng đồng chứ không chỉ riêng các kỹ sư từ google, nên các API, hàm và cách sử dụng được update liên tục. Nhiều lần update các API và cách gọi đã bị thay đổi rất nhiều. Vì vậy, các bạn sẽ thấy mỗi source code bạn tìm được trên github thường mô tả cho các bạn version tensorflow mà họ sử dụng. Khi đó, bạn phải cài đúng version tensorflow thì mới có thể chạy được source code đó.  
-Tuy nhiên khi cài Tensorflow trực tiếp vào máy tính, bạn chỉ có thể cài 1 version. Như thế bạn không thể làm việc với 2 project có version tensorflow khác nhau. Để giải quyết vấn đề này, Anaconda sẽ tạo ra các môi trường ảo khác nhau. Bạn có thể xem mỗi môi trường ảo là một máy tính, bạn có thể cài đặt các phần mềm bạn muốn sử dụng. Khi bạn vào một môi trường ảo, bạn có thể sử dụng các phần mềm đã cài trong môi trường ảo hiện tại. Như thế bạn có thể cài 1 version của tensorflow vào 1 môi trường ảo để làm việc với 1 hoặc nhiều project sử dụng cùng version tensorflow.
+Version hiện tại là 1.8. Mình bắt đầu sử dụng Tensorflow khoảng hơn 1 năm trước, lúc đó nó đang ở version 1.0. Như thế trong hơn 1 năm Tensorflow dã update version 8 lần. Tương tự, pytorch cũng có rất nhiều version khác nhau. Do tính chất là framework opensource, có sự đóng góp rất lớn từ cộng đồng, nên các API, hàm và cách sử dụng được update liên tục. Nhiều lần update các API và cách gọi đã bị thay đổi rất nhiều. Vì vậy, các bạn sẽ thấy mỗi source code bạn tìm được trên github thường mô tả cho các bạn version tensorflow/pytorch mà họ sử dụng. Khi đó, bạn phải cài đúng version tensorflow/pytorch thì mới có thể chạy được source code đó.  
+Tuy nhiên khi cài Tensorflow/pytorch trực tiếp vào máy tính, bạn chỉ có thể cài 1 version. Như thế bạn không thể làm việc với 2 project có version tensorflow/pytorch khác nhau. Để giải quyết vấn đề này, Anaconda sẽ tạo ra các môi trường ảo khác nhau. Bạn có thể xem mỗi môi trường ảo là một máy tính, bạn có thể cài đặt các phần mềm bạn muốn sử dụng. Khi bạn vào một môi trường ảo, bạn có thể sử dụng các phần mềm đã cài trong môi trường ảo hiện tại. Như thế bạn có thể cài 1 version của tensorflow/pytorch vào 1 môi trường ảo để làm việc với 1 hoặc nhiều project sử dụng cùng version tensorflow/pytorch.
 
 
 ### 3. Tổng hợp các lệnh cơ bản của anaconda <a name="forward"></a>
@@ -27,7 +28,7 @@ ví dụ: ```conda create --name tensorflow1.8```
 Ví dụ: tạo môi trường tên tensorflow1.8 có cài đặt sẳn python 2.7  
 ```conda create -n tensorflow1.8 python=2.7```  
 
-Một chú ý là bạn nên đặt tên các môi trường ảo ứng với version tensflow mà bạn cài đặt để tránh nhầm lẫn. Ví dụ như: tensorflow1.0, tensorflow1.8.  
+Một chú ý là bạn nên đặt tên các môi trường ảo ứng với version tensflow mà bạn cài đặt để tránh nhầm lẫn. Ví dụ như: tensorflow1.0, tensorflow1.8, pytorch0.1.12.  
 
 + đi vào 1 môi trường ảo  
 ```source activate [tên môi trường ảo]```  
@@ -44,7 +45,12 @@ Ngoài ra, bạn cũng có thể cài đặt thông qua lệnh pip, nhưng nhớ
 + Kiểm tra các phần mềm đã cài đặt  
 ```conda list```
 
-
++ cài đặt tensorflow
+```conda install -c conda-forge tensorflow ```
+Câu lệnh trên giúp bạn cài đặt tensorflow phiên bản mới nhất. Nếu bạn muốn cài đặt các version khác thì tham khảo hướng dẫn ở [link này](https://www.tensorflow.org/install/install_linux#InstallingAnaconda).
++ cài đặt pytorch
+```conda install pytorch torchvision -c pytorch```
+Câu lệnh trên giúp bạn cài đặt pytorch phiên bản mới nhất. Nếu bạn muốn cài đặt các version khác thì tham khảo hướng dẫn ở  [link này](https://pytorch.org/previous-versions/).
 
 
 Lê Đức Anh
