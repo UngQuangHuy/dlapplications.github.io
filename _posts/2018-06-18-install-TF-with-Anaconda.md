@@ -2,10 +2,12 @@
 layout: post
 title: Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
 hidden: true
+subtitle: Deep learning cơ bản
 tags: [cài đặt, tensorflow, pytorch, jupyter notebook, môi trường ảo anaconda]
 math: true
 ---
 # Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
+Deep learning cơ bản
 ### Mục lục:
 1. [Giới thiệu](#intro)
 2. [Vì sao chúng ta nên sử dụng Anaconda](#notation )
@@ -40,25 +42,25 @@ Ví dụ: tạo môi trường tên tensorflow1.8 có cài đặt sẳn python 2
 
 Một chú ý là bạn nên đặt tên các môi trường ảo ứng với version tensflow mà bạn cài đặt để tránh nhầm lẫn. Ví dụ như: tensorflow1.0, tensorflow1.8, pytorch0.1.12.  
 
-+ đi vào 1 môi trường ảo  
++ Đi vào 1 môi trường ảo  
 ```source activate [tên môi trường ảo]```  
 + Thoát khỏi 1 môi trường ảo  
 ```source deactivate```
 
-+ liệt kê tất cả môi trường ảo trong máy đã tạo  
++ Liệt kê tất cả môi trường ảo trong máy đã tạo  
 ```conda env list```  
-+ xoá một môi trường ảo  
++ Xoá một môi trường ảo  
 ```conda remove --name [tên môi trường ảo] --all```  
-+ cài đặt các gói phần mềm  
++ Cài đặt các gói phần mềm  
 Sau khi vào một môi trường ảo, bạn có thể cài đặt phần mềm mới như sau: vào trang Anaconda.org và tìm theo tên phần mềm cần cài đặt. Ví dụ bạn gõ opencv. Bàn sẽ nhìn thấy nhiều version khác nhau. click vào version muốn cài đặt, bạn sẽ thấy câu lệnh bắt đầu bằng ```conda install``` . Ở đây mình chọn opencv 3.4.1 thì bạn sẽ thầy câu lệnh là ```conda install -c conda-forge opencv```. Copy câu này lên terminal chạy. Nó sẽ tự động cài phần mềm này.  
 Ngoài ra, bạn cũng có thể cài đặt thông qua lệnh pip, nhưng nhớ cài đặt pip trước khi sử dụng nó nhé. pip install [tên phần mềm]  
 + Kiểm tra các phần mềm đã cài đặt  
 ```conda list```
 
-+ cài đặt tensorflow
++ Cài đặt tensorflow
 ```conda install -c conda-forge tensorflow ```
 Câu lệnh trên giúp bạn cài đặt tensorflow phiên bản mới nhất. Nếu bạn muốn cài đặt các version khác thì tham khảo hướng dẫn ở [link này](https://www.tensorflow.org/install/install_linux#InstallingAnaconda).
-+ cài đặt pytorch
++ Cài đặt pytorch
 ```conda install pytorch torchvision -c pytorch```
 Câu lệnh trên giúp bạn cài đặt pytorch phiên bản mới nhất. Nếu bạn muốn cài đặt các version khác thì tham khảo hướng dẫn ở  [link này](https://pytorch.org/previous-versions/).
 
