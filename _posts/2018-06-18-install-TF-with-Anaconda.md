@@ -2,9 +2,17 @@
 layout: post
 title: Cài đặt tensorflow trong môi trường ảo Anaconda để làm deep learning.
 hidden: true
-tags: [cài đặt, tensorflow, môi trường ảo anaconda]
+tags: [cài đặt, tensorflow, pytorch, jupyter notebook, môi trường ảo anaconda]
 math: true
 ---
+# Nền tảng của deep learning - Multi-layer Perceptron
+### Mục lục:
+1. [Giới thiệu](#intro)
+2. [Vì sao chúng ta nên sử dụng Anaconda](#notation )
+3. [Tổng hợp các lệnh cơ bản của anaconda](#forward)
+4. [Kết bài](#conclusion)
+
+
 ### 1. Giới thiệu <a name="intro"></a>
 Như đã nói nhiều ở các post trước, muốn làm deep learning thì nên sử dụng framework. Như đánh gia trong bài Sơ lược về các Deep Learning Framework thì tensorflow, pytorch là 2 framework dễ sử dụng, có cộng đồng sử dụng rất lớn. Như vậy bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi. Trong post này mình xin giới thiệu cách cài đặt 2 framework này, và đây cũng là 2 framework bọn mình chọn để hướng dẫn các bạn làm deep learning trong tương lai.
 Bạn có thể tham khảo clip hướng dẫn cụ thể cách cài Tensorflow trên Anaconda trong Deep learning course (cs-hcmup-2016). Ở đây mình sẽ giải thích rõ vì sao nên xài framework trên môi trường ảo, cơ bản trên Anacoda và làm sao để cài đặt tensorflow và pytorch trên Anacoda để bạn có thể làm việc trong hệ điều hành linux.  
@@ -58,7 +66,11 @@ Câu lệnh trên giúp bạn cài đặt pytorch phiên bản mới nhất. N�
 ```conda install jupyter```  
 
 + Chạy jupyter notebook  
-```jupyter notebook```  
+```jupyter notebook```
+
+### 4. Kết bài <a name="intro"></a>
+Vậy là trong phần này chúng ta đã cài đăt được các framework và các công cụ cần thiết để có thể bắt đầu học và làm deep learning. Nhóm sẽ cố gắng giúp các bạn học Deep Learning thông qua các bài viết về lí thuyết cũng như thực hành trong tương lai thông qua hiểu biết và kinh nghiệm của các thành viên. Mong các bạn tiếp tục ủng hộ nhóm.
+
 Lê Đức Anh
 
 
