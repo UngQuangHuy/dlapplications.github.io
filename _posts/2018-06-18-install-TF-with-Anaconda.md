@@ -6,6 +6,11 @@ subtitle: Deep learning cơ bản
 tags: [cài đặt, tensorflow, pytorch, jupyter notebook, môi trường ảo anaconda]
 math: true
 ---
+
+TODO: để tags một chữ cái thôi nhé. Sau này khó search
+
+TODO: bài này nếu trong series  Deep Learning và Ứng Dụng  thì thêm tag dl_ap 
+
 # Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
 ### Mục lục:
 1. [Giới thiệu](#intro)
@@ -15,12 +20,22 @@ math: true
 
 
 ### 1. Giới thiệu <a name="intro"></a>
-Như đã nói nhiều ở các post trước, muốn làm deep learning thì nên sử dụng framework. Như đánh gia trong bài Sơ lược về các Deep Learning Framework thì tensorflow, pytorch là 2 framework dễ sử dụng, có cộng đồng sử dụng rất lớn. Như vậy bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi. Trong post này mình xin giới thiệu cách cài đặt 2 framework này, và đây cũng là 2 framework bọn mình chọn để hướng dẫn các bạn làm deep learning trong tương lai.
-Bạn có thể tham khảo clip hướng dẫn cụ thể cách cài Tensorflow trên Anaconda trong Deep learning course (cs-hcmup-2016). Ở đây mình sẽ giải thích rõ vì sao nên xài framework trên môi trường ảo, cơ bản trên Anacoda và làm sao để cài đặt tensorflow và pytorch trên Anacoda để bạn có thể làm việc trong hệ điều hành linux.  
+Như đã nói nhiều ở các ~~post trước~~ (TODO: thêm link sang bài số 2), ~~muốn làm deep learning~~ (TODO: muốn phát triển các ứng dụng sử dụng deep learning một cách dễ dàng) thì nên sử dụng framework (TODO: phù hợp). Như đánh gia trong bài ~~Sơ lược về các Deep Learning Framework~~ (TODO: link?) thì tensorflow, pytorch là 2 framework (TODO: đơn giản) dễ sử dụng nhất. Đặc biệt là cả hai đều có cộng đồng người dùng (user) và model zoo rất lớn. Như vậy (TODO: khi gặp một vấn đề khó giải quyết, ) bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi (TODO: link của communitye). 
 
-Ngoài ra nhóm sẽ sử dụng Jupyter notebook để tạo các bài học về deep learning cho các bạn. Jupyter notebook là phần mềm giúp bạn tạo ra các tài liệu vừa chứa text, công thức, hình ảnh và cả code có thể thực thi. Đây là một công cụ rất tốt để tạo ra các bài tutorial dễ hiểu và trực quan. 
+Trong post này nhóm xin giới thiệu cách cài đặt 2 framework tensorflow và pytorch. Đây là 2 framework chính được sử dụng trong những bài viết tới. ~~bọn mình chọn để hướng dẫn các bạn làm deep learning trong tương lai~~ . 
+
+TODO: trước khi cài đặt máy tính có trạng thái gì ? (vd: Ubuntu, 64bits, GPU=? ???, dạng bảng). 
+Sau khi cài đấy máy tính có những package gì mới ? (vd: cuda=?, pytorch=?, conda=? -> dạng bảng). 
+
+TODO: mục lục nên để lại thành  : GPU driver -> cài đặt anaconda -> tạo môi truonwgf ảo cho tensorflow và pytorch -> cái đặt tensorflow (có phần 動作確認) -> cài đặt pytorch　（có phần 動作確認）-> kết bài 
+
+~~Bạn có thể tham khảo clip hướng dẫn cụ thể cách cài Tensorflow trên Anaconda trong Deep learning course (cs-hcmup-2016). Ở đây mình sẽ giải thích rõ vì sao nên xài framework trên môi trường ảo, cơ bản trên Anacoda và làm sao để cài đặt tensorflow và pytorch trên Anacoda để bạn có thể làm việc trong hệ điều hành linux. ~~ (TODO: trong bài chưa có chỗ nào đề cập tới Anaconda, đập vào đây luôn thì sẽ rất khó hiểu. ) 
+
+~~Ngoài ra nhóm sẽ sử dụng Jupyter notebook để tạo các bài học về deep learning cho các bạn. Jupyter notebook là phần mềm giúp bạn tạo ra các tài liệu vừa chứa text, công thức, hình ảnh và cả code có thể thực thi. Đây là một công cụ rất tốt để tạo ra các bài tutorial dễ hiểu và trực quan.~~ (TODO: những giải thích tại sao lại chọn công cụ này thì nên để đoạn installation công cụ ấy) 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/t_pxnHpRszg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+TODO: mục đích của video là gì ?
 
 ### 2. Vì sao chúng ta nên sử dụng Anaconda <a name="notation"></a>
 
@@ -30,7 +45,8 @@ Tuy nhiên khi cài Tensorflow/pytorch trực tiếp vào máy tính, bạn ch�
 
 
 ### 3. Tổng hợp các lệnh cơ bản của anaconda <a name="forward"></a>
-Các bạn có thể thực hành theo video đính kèm. Mình xin tổng tổng hợp 1 số lệnh cơ bản của anaconda:
+
+~~Các bạn có thể thực hành theo video đính kèm~~ (TODO: bài viết này để hướng dẫn installation, sao còn bắt họ xem video). ~~Mình xin tổng tổng hợp 1 số lệnh cơ bản của anaconda:~~ (TODO: mục đích của những câu lệnh dưới là gì? tạo virtual env cho pytorch và tensorflow ???)
 + Tạo 1 môi trường mới  
 ```conda create --name [tên môi trường ảo]```
 ví dụ: ```conda create --name tensorflow1.8``` 
@@ -52,7 +68,7 @@ Một chú ý là bạn nên đặt tên các môi trường ảo ứng với ve
 ```conda remove --name [tên môi trường ảo] --all```  
 + Cài đặt các gói phần mềm  
 Sau khi vào một môi trường ảo, bạn có thể cài đặt phần mềm mới như sau: vào trang Anaconda.org và tìm theo tên phần mềm cần cài đặt. Ví dụ bạn gõ opencv. Bàn sẽ nhìn thấy nhiều version khác nhau. click vào version muốn cài đặt, bạn sẽ thấy câu lệnh bắt đầu bằng ```conda install``` . Ở đây mình chọn opencv 3.4.1 thì bạn sẽ thầy câu lệnh là ```conda install -c conda-forge opencv```. Copy câu này lên terminal chạy. Nó sẽ tự động cài phần mềm này.  
-Ngoài ra, bạn cũng có thể cài đặt thông qua lệnh pip, nhưng nhớ cài đặt pip trước khi sử dụng nó nhé. pip install [tên phần mềm]  
+~~Ngoài ra, bạn cũng có thể cài đặt thông qua lệnh pip, nhưng nhớ cài đặt pip trước khi sử dụng nó nhé. pip install [tên phần mềm]~~ (TODO: tôi nghĩ bỏ đoạn này, đỡ rối rắm)  
 + Kiểm tra các phần mềm đã cài đặt  
 ```conda list```
 
@@ -69,8 +85,10 @@ Câu lệnh trên giúp bạn cài đặt pytorch phiên bản mới nhất. N�
 + Chạy jupyter notebook  
 ```jupyter notebook```
 
+TODO: làm sao để biết quá trình cài đặt thành công ??? tensorflow và pytorch đều chạy dc, không có lỗi gì xảy ra ??
+
 ### 4. Kết bài <a name="intro"></a>
-Vậy là trong phần này chúng ta đã cài đăt được các framework và các công cụ cần thiết để có thể bắt đầu học và làm deep learning. Nhóm sẽ cố gắng giúp các bạn học Deep Learning thông qua các bài viết về lí thuyết cũng như thực hành trong tương lai thông qua hiểu biết và kinh nghiệm của các thành viên. Mong các bạn tiếp tục ủng hộ nhóm.
+Vậy là trong phần này chúng ta đã cài đăt được các framework và các công cụ cần thiết để có thể bắt đầu học và làm deep learning. ~~Nhóm sẽ cố gắng giúp các bạn học Deep Learning thông qua các bài viết về lí thuyết cũng như thực hành trong tương lai thông qua hiểu biết và kinh nghiệm của các thành viên. Mong các bạn tiếp tục ủng hộ nhóm.~~ (TODO: tôi nghĩ nên có một đoạn nói ngắn gọn lại về công dụng của từng package , dưới dạng list hoặc bảng)
 
 Lê Đức Anh
 
