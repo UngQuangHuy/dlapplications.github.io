@@ -9,6 +9,8 @@ math: true
 Như đã nói nhiều ở các post trước, muốn làm deep learning thì nên sử dụng framework. Như đánh gia trong bài Sơ lược về các Deep Learning Framework thì tensorflow, pytorch là 2 framework dễ sử dụng, có cộng đồng sử dụng rất lớn. Như vậy bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi. Trong post này mình xin giới thiệu cách cài đặt 2 framework này, và đây cũng là 2 framework bọn mình chọn để hướng dẫn các bạn làm deep learning trong tương lai.
 Bạn có thể tham khảo clip hướng dẫn cụ thể cách cài Tensorflow trên Anaconda trong Deep learning course (cs-hcmup-2016). Ở đây mình sẽ giải thích rõ vì sao nên xài framework trên môi trường ảo, cơ bản trên Anacoda và làm sao để cài đặt tensorflow và pytorch trên Anacoda để bạn có thể làm việc trong hệ điều hành linux.  
 
+Ngoài ra nhóm sẽ sử dụng Jupyter notebook để tạo các bài học về deep learning cho các bạn. Jupyter notebook là phần mềm giúp bạn tạo ra các tài liệu vừa chứa text, công thức, hình ảnh và cả code có thể thực thi. Đây là một công cụ rất tốt để tạo ra các bài tutorial dễ hiểu và trực quan. 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/t_pxnHpRszg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ### 2. Vì sao chúng ta nên sử dụng Anaconda <a name="notation"></a>
@@ -52,7 +54,11 @@ Câu lệnh trên giúp bạn cài đặt tensorflow phiên bản mới nhất. 
 ```conda install pytorch torchvision -c pytorch```
 Câu lệnh trên giúp bạn cài đặt pytorch phiên bản mới nhất. Nếu bạn muốn cài đặt các version khác thì tham khảo hướng dẫn ở  [link này](https://pytorch.org/previous-versions/).
 
++ Cài đặt jupyter notebook  
+```conda install jupyter```  
 
++ Chạy jupyter notebook  
+```jupyter notebook```  
 Lê Đức Anh
 
 
