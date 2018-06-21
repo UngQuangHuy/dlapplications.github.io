@@ -1,11 +1,11 @@
 ---
 layout: post
-title: Cài đặt tensorflow trong môi trường ảo Anaconda để làm deep learning.
+title: Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
 hidden: true
 tags: [cài đặt, tensorflow, pytorch, jupyter notebook, môi trường ảo anaconda]
 math: true
 ---
-# Nền tảng của deep learning - Multi-layer Perceptron
+# Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
 ### Mục lục:
 1. [Giới thiệu](#intro)
 2. [Vì sao chúng ta nên sử dụng Anaconda](#notation )
