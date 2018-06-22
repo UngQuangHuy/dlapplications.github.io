@@ -20,9 +20,10 @@ TODO: bài này nếu trong series  Deep Learning và Ứng Dụng  thì thêm t
 
 
 ### 1. Giới thiệu <a name="intro"></a>
-Như đã nói nhiều ở [Làm sao để trở thành AI/Deep Learning engineer](https://www.facebook.com/permalink.php?story_fbid=212067389390163&id=204704190126483), [Sơ lược về các Deep Learning Framework](https://dlapplications.github.io/2018-06-13-dlframework/), muốn phát triển các ứng dụng sử dụng deep learning một cách dễ dàng thì nên sử dụng framework phù hợp. Như đánh gia trong bài [Sơ lược về các Deep Learning Framework](https://dlapplications.github.io/2018-06-13-dlframework/) thì tensorflow, pytorch là 2 framework đơn giản và dễ sử dụng nhất. Đặc biệt là cả hai đều có cộng đồng người dùng và model zoo rất lớn. Như vậy, khi gặp một vấn đề khó giải quyết, bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi. cộng đồng [Tensorflow](https://www.tensorflow.org/community/),  [Pytorch](https://discuss.pytorch.org/).  
+Như đã nói nhiều ở [Làm sao để trở thành AI/Deep Learning engineer](https://www.facebook.com/permalink.php?story_fbid=212067389390163&id=204704190126483), [Sơ lược về các Deep Learning Framework](https://dlapplications.github.io/2018-06-13-dlframework/), muốn phát triển các ứng dụng sử dụng deep learning một cách dễ dàng thì nên sử dụng framework phù hợp. Như đánh gia trong bài [Sơ lược về các Deep Learning Framework](https://dlapplications.github.io/2018-06-13-dlframework/) thì tensorflow, pytorch là 2 framework đơn giản và dễ sử dụng nhất. Đặc biệt là cả hai đều có cộng đồng người dùng và model zoo rất lớn. Như vậy, khi gặp một vấn đề khó giải quyết, bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi. Cộng đồng [Tensorflow](https://www.tensorflow.org/community/),  [Pytorch](https://discuss.pytorch.org/).  
 
 Trong post này nhóm xin giới thiệu cách cài đặt 2 framework tensorflow và pytorch. Đây là 2 framework chính được sử dụng trong những bài viết tới. ~~bọn mình chọn để hướng dẫn các bạn làm deep learning trong tương lai~~ . 
+
 
 TODO: trước khi cài đặt máy tính có trạng thái gì ? (vd: Ubuntu, 64bits, GPU=? ???, dạng bảng). 
 Sau khi cài đấy máy tính có những package gì mới ? (vd: cuda=?, pytorch=?, conda=? -> dạng bảng). 
