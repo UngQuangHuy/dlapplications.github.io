@@ -22,11 +22,9 @@ TODO: bài này nếu trong series  Deep Learning và Ứng Dụng  thì thêm t
 ### 1. Giới thiệu <a name="intro"></a>
 Như đã nói nhiều ở [Làm sao để trở thành AI/Deep Learning engineer](https://www.facebook.com/permalink.php?story_fbid=212067389390163&id=204704190126483), [Sơ lược về các Deep Learning Framework](https://dlapplications.github.io/2018-06-13-dlframework/), muốn phát triển các ứng dụng sử dụng deep learning một cách dễ dàng thì nên sử dụng framework phù hợp. Như đánh gia trong bài [Sơ lược về các Deep Learning Framework](https://dlapplications.github.io/2018-06-13-dlframework/) thì tensorflow, pytorch là 2 framework đơn giản và dễ sử dụng nhất. Đặc biệt là cả hai đều có cộng đồng người dùng và model zoo rất lớn. Như vậy, khi gặp một vấn đề khó giải quyết, bạn sẽ được hỗ trợ rất nhiều từ cộng đồng sử dụng khi gặp vấn đề hoặc muốn đặt câu hỏi. Cộng đồng [Tensorflow](https://www.tensorflow.org/community/),  [Pytorch](https://discuss.pytorch.org/).  
 
-Trong post này nhóm xin giới thiệu cách cài đặt 2 framework tensorflow và pytorch. Đây là 2 framework chính được sử dụng trong những bài viết tới. ~~bọn mình chọn để hướng dẫn các bạn làm deep learning trong tương lai~~ . 
+Trong post này nhóm xin giới thiệu cách cài đặt 2 framework tensorflow và pytorch. Đây là 2 framework chính được sử dụng trong những bài viết tới. 
 
-
-TODO: trước khi cài đặt máy tính có trạng thái gì ? (vd: Ubuntu, 64bits, GPU=? ???, dạng bảng). 
-Sau khi cài đấy máy tính có những package gì mới ? (vd: cuda=?, pytorch=?, conda=? -> dạng bảng). 
+Trong bài này mình hướng dẫn cài đặt các framework lên máy tính cấu hình như sau Ubuntu 16.04, 64 bit, GPU GTX 1070. Nếu bạn không có card GPU có thể cài đặt framework phiên bản CPU.
 
 TODO: mục lục nên để lại thành  : GPU driver -> cài đặt anaconda -> tạo môi truonwgf ảo cho tensorflow và pytorch -> cái đặt tensorflow (có phần 動作確認) -> cài đặt pytorch　（có phần 動作確認）-> kết bài 
 
@@ -34,11 +32,13 @@ TODO: mục lục nên để lại thành  : GPU driver -> cài đặt anaconda 
 
 ~~Ngoài ra nhóm sẽ sử dụng Jupyter notebook để tạo các bài học về deep learning cho các bạn. Jupyter notebook là phần mềm giúp bạn tạo ra các tài liệu vừa chứa text, công thức, hình ảnh và cả code có thể thực thi. Đây là một công cụ rất tốt để tạo ra các bài tutorial dễ hiểu và trực quan.~~ (TODO: những giải thích tại sao lại chọn công cụ này thì nên để đoạn installation công cụ ấy) 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/t_pxnHpRszg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-TODO: mục đích của video là gì ?
+### 2. Cài đặt cuda và cudnn cho GPU <a name="gpu"></a>
 
-### 2. Vì sao chúng ta nên sử dụng Anaconda <a name="notation"></a>
+Bạn vào đường link của [Nvidia](https://developer.nvidia.com/cuda-80-ga2-download-archive) và chọn các tab như hình phía dưới để download được cuda 8.0.
+
+![down][dlapplications.github.io/img/20180618/Screen Shot 2018-06-24 at 5.52.53 PM.png]  
+### 3. Cài đặt Anaconda <a name="anaconda"></a>
 
 Tensorflow ra đời vào tháng 11 năm 2015, tính đến này được khoảng 2 năm rưỡi.
 Version hiện tại là 1.8. Mình bắt đầu sử dụng Tensorflow khoảng hơn 1 năm trước, lúc đó nó đang ở version 1.0. Như thế trong hơn 1 năm Tensorflow dã update version 8 lần. Tương tự, pytorch cũng có rất nhiều version khác nhau. Do tính chất là framework opensource, có sự đóng góp rất lớn từ cộng đồng, nên các API, hàm và cách sử dụng được update liên tục. Nhiều lần update các API và cách gọi đã bị thay đổi rất nhiều. Vì vậy, các bạn sẽ thấy mỗi source code bạn tìm được trên github thường mô tả cho các bạn version tensorflow/pytorch mà họ sử dụng. Khi đó, bạn phải cài đúng version tensorflow/pytorch thì mới có thể chạy được source code đó.  
