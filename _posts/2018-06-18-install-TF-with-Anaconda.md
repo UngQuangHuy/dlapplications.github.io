@@ -37,7 +37,7 @@ TODO: mục lục nên để lại thành  : GPU driver -> cài đặt anaconda 
 
 Bạn vào đường link của [Nvidia](https://developer.nvidia.com/cuda-80-ga2-download-archive) và chọn các tab như hình phía dưới để download được cuda 8.0.
 
-![download cuda][img/20180618/Screen Shot 2018-06-24 at 5.52.53 PM.png]  
+![download cuda][/img/20180618/Screen Shot 2018-06-24 at 5.52.53 PM.png]  
 ### 3. Cài đặt Anaconda <a name="anaconda"></a>
 
 Tensorflow ra đời vào tháng 11 năm 2015, tính đến này được khoảng 2 năm rưỡi.
