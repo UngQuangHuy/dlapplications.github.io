@@ -8,7 +8,7 @@ math: true
 ---
 
 
-# Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
+# Cài đặt Frameworks để làm deep learning.
 ### Mục lục:
 1. [Giới thiệu](#intro)
 2. [Cài đặt cuda và cudnn cho GPU ](#gpu )
