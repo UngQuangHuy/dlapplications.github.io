@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
+title: Cài đặt Frameworks để làm Deep Learning.
 hidden: false
 subtitle: Deep Learning và Ứng Dụng
 tags: [cài đặt deep learning frameworks]
@@ -8,7 +8,7 @@ math: true
 ---
 
 
-# Cài đặt Frameworks để làm deep learning.
+# Cài đặt Frameworks để làm Deep Learning.
 ### Mục lục:
 1. [Giới thiệu](#intro)
 2. [Cài đặt cuda và cudnn cho GPU ](#gpu )
