@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Cài đặt tensorflow/pytorch/jupyter notebook trong môi trường ảo Anaconda để làm deep learning.
-hidden: true
+hidden: false
 subtitle: Deep Learning và Ứng Dụng
 tags: [cài đặt deep learning frameworks]
 math: true
@@ -14,7 +14,6 @@ math: true
 2. [Cài đặt cuda và cudnn cho GPU ](#gpu )
 3. [Cài đặt Anaconda](#anaconda)
 4. [ Cài đặt framework để làm deep learning](#framework)
-
 4. [Kết bài](#conclusion)
 
 
@@ -25,12 +24,12 @@ Trong post này nhóm xin giới thiệu cách cài đặt 2 framework tensorflo
 
 Trong bài này mình hướng dẫn cài đặt các framework lên máy tính cấu hình như sau Ubuntu 16.04, 64 bit, GPU GTX 1070. Nếu bạn không có card GPU có thể cài đặt framework phiên bản CPU.
 
-
 ### 2. Cài đặt cuda và cudnn cho GPU <a name="gpu"></a>
 ### Cài đặt cuda
 Bạn vào đường link của [Nvidia](https://developer.nvidia.com/cuda-90-download-archive) và chọn các tab như hình phía dưới để download được cuda 9.0.
 
 ![download cuda 9.0 và hướng dẫn cài đặt](/img/20180618/img_1.png)   
+
 Chạy 4 câu lệnh sau để cài đặt cuda  
 ```sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb```  
 ```sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub```  
@@ -100,15 +99,12 @@ Nếu bạn thấy dòng chữ ''Hello, TensorFlow!'' trên màn hình thì quá
  ```x  ```
 Nếu bạn thấy 1 ma trận 2 hàng 4 cột và dòng chữ 'torch.FloatTensor of size 2x4'' trên màn hình thì quá trình cài đặt pytorch đã thành công.  
 
-
 ### Cài đặt jupyter notebook 
 Jupyter notebook là phần mềm giúp bạn tạo ra các tài liệu vừa chứa text, công thức, hình ảnh và cả code có thể thực thi. Đây là một công cụ rất tốt để tạo ra các bài tutorial dễ hiểu và trực quan. Nhóm sẽ sử dụng Jupyter notebook để tạo các bài học về deep learning cho các bạn. 
 ```conda install jupyter```  
 
 + Chạy jupyter notebook  
 ```jupyter notebook```
-
-
 
 ### Tổng hợp các lệnh cơ bản của Anaconda 
 + Tạo 1 môi trường mới  
@@ -119,27 +115,23 @@ ví dụ: ```conda create --name tensorflow1.8```
 Ví dụ: tạo môi trường tên tensorflow1.8 có cài đặt sẳn python 2.7  
 ```conda create -n tensorflow1.8 python=2.7```  
 Một chú ý là bạn nên đặt tên các môi trường ảo ứng với version tensflow mà bạn cài đặt để tránh nhầm lẫn. Ví dụ như: tensorflow1.0, tensorflow1.8, pytorch0.1.12.  
-
 + Đi vào 1 môi trường ảo  
 ```source activate [tên môi trường ảo]```  
 + Thoát khỏi 1 môi trường ảo  
 ```source deactivate```
-
 + Liệt kê tất cả môi trường ảo trong máy đã tạo  
 ```conda env list```  
 + Xoá một môi trường ảo  
 ```conda remove --name [tên môi trường ảo] --all```  
 + Cài đặt các gói phần mềm  
 Sau khi vào một môi trường ảo, bạn có thể cài đặt phần mềm mới như sau: vào trang Anaconda.org và tìm theo tên phần mềm cần cài đặt. Ví dụ bạn gõ opencv. Bàn sẽ nhìn thấy nhiều version khác nhau. click vào version muốn cài đặt, bạn sẽ thấy câu lệnh bắt đầu bằng ```conda install``` . Ở đây mình chọn opencv 3.4.1 thì bạn sẽ thầy câu lệnh là ```conda install -c conda-forge opencv```. Copy câu này lên terminal chạy. Nó sẽ tự động cài phần mềm này.  
-
 + Kiểm tra các phần mềm đã cài đặt  
 ```conda list```
-
-
 
 ### 4. Kết bài <a name="conclusion"></a>
 Vậy là trong phần này chúng ta đã cài đăt được các framework và các công cụ cần thiết để có thể bắt đầu học và làm deep learning. 
 Mình tổng hợp ngắn gọn mục đích sử dụng của các công cụ trong bảng sau:  
+
 | Công cụ        |    Mục đích           |
 |----------------|:-------------:|
 | Anaconda       | Tạo nhiều môi trường ảo riêng biệt để chạy các phiên bản khác nhau của cùng một framework.              |
