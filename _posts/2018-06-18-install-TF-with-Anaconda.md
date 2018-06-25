@@ -34,10 +34,19 @@ TODO: mục lục nên để lại thành  : GPU driver -> cài đặt anaconda 
 
 
 ### 2. Cài đặt cuda và cudnn cho GPU <a name="gpu"></a>
+# Cài đặt cuda
+Bạn vào đường link của [Nvidia](https://developer.nvidia.com/cuda-90-download-archive) và chọn các tab như hình phía dưới để download được cuda 9.0.
 
-Bạn vào đường link của [Nvidia](https://developer.nvidia.com/cuda-80-ga2-download-archive) và chọn các tab như hình phía dưới để download được cuda 8.0.
+![download cuda 9.0 và hướng dẫn cài đặt](/img/20180618/img_1.png)  
 
-![download cuda 9.0 và hướng dẫn cài đặt][/img/20180618/img_1.png]  
+# Cài đặt cudnn
+Bạn vào đường [link này](https://developer.nvidia.com/cudnn) để download cudnn 7.1. Bạn cần phải đăng kí một tài khoản để có thể download cudnn nhé.  
+Unzip file vừa download vào folder Downloads. Bạn sẽ thấy folder cuda có chứa 2 folder con là include và lib64. Copy 2 folder này vào thư mục CUDA_HOME bằng các câu lệnh sau:
+
+'sudo cp cuda/include/cudnn.h /usr/local/cuda/include'
+'sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64'
+'sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*'
+
 ### 3. Cài đặt Anaconda <a name="anaconda"></a>
 
 Tensorflow ra đời vào tháng 11 năm 2015, tính đến này được khoảng 2 năm rưỡi.
