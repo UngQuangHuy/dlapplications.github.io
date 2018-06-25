@@ -118,7 +118,6 @@ ví dụ: ```conda create --name tensorflow1.8```
 ```conda create -n myenv [tên software]=[version]``` 
 Ví dụ: tạo môi trường tên tensorflow1.8 có cài đặt sẳn python 2.7  
 ```conda create -n tensorflow1.8 python=2.7```  
-
 Một chú ý là bạn nên đặt tên các môi trường ảo ứng với version tensflow mà bạn cài đặt để tránh nhầm lẫn. Ví dụ như: tensorflow1.0, tensorflow1.8, pytorch0.1.12.  
 
 + Đi vào 1 môi trường ảo  
@@ -139,8 +138,8 @@ Sau khi vào một môi trường ảo, bạn có thể cài đặt phần mềm
 
 
 ### 4. Kết bài <a name="conclusion"></a>
-Vậy là trong phần này chúng ta đã cài đăt được các framework và các công cụ cần thiết để có thể bắt đầu học và làm deep learning.
-
+Vậy là trong phần này chúng ta đã cài đăt được các framework và các công cụ cần thiết để có thể bắt đầu học và làm deep learning. 
+Mình tổng hợp ngắn gọn mục đích sử dụng của các công cụ trong bảng sau:  
 | Công cụ        |    Mục đích           |
 |----------------|:-------------:|
 | Anaconda       | Tạo nhiều môi trường ảo riêng biệt để chạy các phiên bản khác nhau của cùng một framework.              |
