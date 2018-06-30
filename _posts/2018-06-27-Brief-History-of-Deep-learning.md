@@ -3,7 +3,7 @@ layout: post
 title: Lược sử về Deep Learning.
 hidden: true
 subtitle: Từ ý tưởng thất bại đến nền tảng định hình thế giới hiện đại.
-bigimg: /img/20180627/timeline.jpg
+bigimg: /img/20180630/timeline.jpg
 tags: [blog]
 math: true
 ---
@@ -115,7 +115,7 @@ Năm 2012, Alex Krizhevsky, Ilya Sutskever, và người hướng dẫn của h�
 
 Họ tiết lộ rằng đây là một model CNN, là Deep CNN đầu tiên mà ngày nay chúng ta biết đến như là AlexNet. Trong model này, họ giới thiệu đến công chúng những kỹ thuật mà chưa ai từng nghĩ đến mà ngày nay chúng ta đã thấy rất quen thuộc: ReLU activation và DropConnect/Dropout. Hơn nữa, model được train trên dataset của chính ImageNet năm 2011, với sự tăng tốc của GPU hỗ trợ bởi CUDA. Đây là những sự kết hợp chưa ai từng trực tiếp thử nghiệm.
 
-![ImageNet top-5 error](/img/20180627/ImageNet_error.png)*Kết quả ILSVRC qua từng năm*
+![ImageNet top-5 error](/img/20180630/ImageNet_error.png)*Kết quả ILSVRC qua từng năm*
 
 Sau khi kết quả ILSVRC được công bố, các nhà nghiên cứu ANN bắt đầu cân nhắc DL như là một lựa chọn thay thế cho các phương thức truyền thống. Sự lan tỏa bắt đầu trở nên phổ biến khi một DL model khác là Clarifai đạt [11.2%](http://www.image-net.org/challenges/LSVRC/2013/results.php#cls) trong ILSVRC 2013. Điều này thúc đẩy nhiều nhà nghiên cứu chuyển hẳn sang DL. Từ đó, các model state-of-the-art mỗi năm trên ImageNet đều là các DL model, với độ sâu ngày một tăng.
 
@@ -147,7 +147,7 @@ Nguyên nhân cho việc này là những nghiên cứu phát triển theo cấp
 #### 2. Những người mới
 Những nhà nghiên cứu đã rất cố gắng trong việc tạo ra model bằng những nghiên cứu trước đó, các phân tích cụ thể cho vài trò của từng thành phần trong ANN và sử dụng các dataset phù hợp để đưa model đạt accuracy tốt nhất. Đó là cả một quá trình để có thể tạo ra được một model chấp nhận được, không phải dễ dàng để có được Ph.D hay Postdoc trong ngành DL.
 
-![NIPS partipants](/img/20180627/NIPS.png)*Số lượng người tham gia [Neural Information Processing Systems](https://nips.cc/) (NIPS) – hội thảo khoa học chuyên về ML và computational neuroscience tăng nhanh chóng.*
+![NIPS partipants](/img/20180630/NIPS.png)*Số lượng người tham gia [Neural Information Processing Systems](https://nips.cc/) (NIPS) – hội thảo khoa học chuyên về ML và computational neuroscience tăng nhanh chóng.*
 
 Việc học cũng vậy, những người mới tham gia vào có thể theo học các course được các Professors đầu ngành hoặc các kỹ sư chuyên ngành tại các tập đoàn lớn. Để nắm rõ được DL, bạn cần phải có một nền tảng toán học tương đối và tư duy lập trình căn bản, nhất là niềm đam mê với ngành, nếu không, những sự khó khăn sẽ khiến cho bạn từ bỏ sớm.
 
