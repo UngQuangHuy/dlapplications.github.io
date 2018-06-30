@@ -119,7 +119,7 @@ Họ tiết lộ rằng đây là một model CNN, là Deep CNN đầu tiên mà
 
 Sau khi kết quả ILSVRC được công bố, các nhà nghiên cứu ANN bắt đầu cân nhắc DL như là một lựa chọn thay thế cho các phương thức truyền thống. Sự lan tỏa bắt đầu trở nên phổ biến khi một DL model khác là Clarifai đạt [11.2%](http://www.image-net.org/challenges/LSVRC/2013/results.php#cls) trong ILSVRC 2013. Điều này thúc đẩy nhiều nhà nghiên cứu chuyển hẳn sang DL. Từ đó, các model state-of-the-art mỗi năm trên ImageNet đều là các DL model, với độ sâu ngày một tăng.
 
-![ImageNet state-of-the-art depth](/img/20180627/ImageNet_error.png)*Độ sâu các state-of-the-art ANN qua từng năm*
+![ImageNet state-of-the-art depth](/img/20180630/ImageNet_error.png)*Độ sâu các state-of-the-art ANN qua từng năm*
 
 2012 là năm mà sự quan tâm được chuyển sang cho DL, cho thấy sự khởi đầu để DL bao trùm mọi mặt của cuộc sống con người. Mặc dù năm 2017 là năm cuối cùng của ILSVRC nhưng những di sản mà cuộc thi này để lại là không thể bác bỏ được.
 
