@@ -140,7 +140,7 @@ Trước sự phát triển vượt bậc đó, DL hứa hẹn sẽ mang lại n
 
 Nhiều người sẽ cho rằng, trong tương lai gần, các AI sẽ có thể mô phỏng thật giống con người. [Thực tế](https://en.wikipedia.org/wiki/Automaton) cho thấy đó không phải là điều không thể. Nhưng có lẽ ngày đó sẽ còn xa lắm, nếu như chúng ta phát triển DL theo cách như hiện nay?
 
-Người đứng đầu cơ quan phát triển AI của Facebook, [LeCun](http://yann.lecun.com/) cho rằng DL đang dần [trở thành] (https://medium.com/@Synced/lecun-vs-rahimi-has-machine-learning-become-alchemy-21cb1557920d) một thứ như Giả kim thuật, với việc các model là một blackbox, chúng ta không thể biết chúng đã học được những gì từ dataset, những thứ chúng học có đúng không, hay thậm chí những điều chúng ta biết về chúng có chính xác không?
+Người đứng đầu cơ quan phát triển AI của Facebook, [LeCun](http://yann.lecun.com/) cho rằng DL đang dần [trở thành](https://medium.com/@Synced/lecun-vs-rahimi-has-machine-learning-become-alchemy-21cb1557920d) một thứ như Giả kim thuật, với việc các model là một blackbox, chúng ta không thể biết chúng đã học được những gì từ dataset, những thứ chúng học có đúng không, hay thậm chí những điều chúng ta biết về chúng có chính xác không?
 
 Nguyên nhân cho việc này là những nghiên cứu phát triển theo cấp số mũ, không có định hình được cụ thể những nguyên lý khác ngoài việc tạo ra model hay dataset (e.g. việc tại sao một số model converge được trong khi một số thì không vẫn chưa có lời giải, việc giải nghĩa các weight của ANN vẫn còn là một bí ẩn, …).
 
