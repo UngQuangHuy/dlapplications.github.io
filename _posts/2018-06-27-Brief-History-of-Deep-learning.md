@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lược sử về Deep Learning.
-hidden: true
+hidden: false
 subtitle: Từ ý tưởng thất bại đến nền tảng định hình thế giới hiện đại.
 bigimg: /img/20180630/timeline.jpg
 tags: [blog]
