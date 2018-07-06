@@ -10,8 +10,8 @@ math: true
 # Nền tảng của deep learning - Multi-layer Perceptron
 ### Mục lục:
 1. [Mở đầu](#intro)
-2. [Phát hiện bảng số xe](#notation )
-3. [Từ input tới output ](#forward)
+2. [Phát hiện bảng số xe](#method )
+3. [Hạn chế của phương pháp ](#limitation)
 4. [Kết bài](#conclusion)
 
 
@@ -21,7 +21,7 @@ Hôm nay nhóm sẽ bắt đầu một số bài viết giúp bạn thực hiệ
 ### Đọc chữ trên biển số vừa tìm được  
 Trong phần 1 này mình sẽ hướng dẫn các bạn phát hiện bảng số xe đơn giản bằng cách sử dụng công cụ openCV. Phương pháp này sử dụng các phép toán xử lý ảnh thông thường nên sẽ chạy rất nhanh so với các phương pháp Deep Learning.  
 
-### 2. Phát hiện bảng số xe <a name="notation"></a>
+### 2. Phát hiện bảng số xe <a name="method"></a>
 Cài đặt môi trường làm viêc: Để bắt đầu làm việc bạn tạo môi trường ảo có cài đặt python và opencv như sau:  
 ```conda create -n NumberPlateRecognition python=2.7 opencv=2.4```
 Cài đặt thư viện imutils  
@@ -102,6 +102,14 @@ cv2.imshow("Final Image With Number Plate Detected", image)
 cv2.imwrite("image_result.jpeg", image)
 cv2.waitKey(0)
 ```
+### 3.Ưu nhược điểm của phương pháp <a name="limitation"></a>)
+### Ưu điểm
++ Phương pháp đơn giản, nhanh, nhỏ gọn. Có thể chạy trên rất nhiều platform như windows, linux, mac, ...
+### Nhược điểm
+Phương pháp mình giới thiệu trong bài này khá đơn giản nên nó sẽ có một số nhược điểm nhứ sau:
++ khi kích thước biển số xe trong hình thay đổi (ví dụ qua lớn hoặc quá bé) thì phương pháp sẽ gặp lỗi. Nên khi sử dụng chúng ta phải có ràng buộc khoảng cách từ camera và xe là cố định thì phương pháp sẽ chạy khá ổn.  
++ Phương pháp này sẽ gặp vấn đề nếu ảnh bị nhoè, độ phân giải thấp hoặc điều kiện ánh sáng không tốt. Nhưng điều này các bạn có thể kiểm chứng bằng thực tế nhé.  
+
 
 ### 4. Kết bài <a name="conclusion"></a>
 
