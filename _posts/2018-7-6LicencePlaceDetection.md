@@ -110,7 +110,9 @@ Một số ví dụ phát hiện được bảng số
 
 ![ảnh nhận diện đúng 1](/img/20180706/OK1.jpeg)   
 
-![ảnh  nhận diện đúng 2](/img/20180706/OK2.jpeg)  
+![ảnh  nhận diện đúng 2](/img/20180706/Ok2.jpeg)  
+
+Đối với các vung phát hiện sai ở trên, chúng ta có thể kết hợp với quá trình đọc chữ để loại bỏ các vùng không phải bảng số.
 
 
 ### Nhược điểm
