@@ -36,6 +36,7 @@ import  imutils
 Đọc file hình ảnh lên  
 ```image = cv2.imread('images.jpeg')```
 
+
 Thay đổi kích thước hình ảnh. Chiều rộng là 500 và giữ nguyên tỉ lệ hình ảnh.  
 ```image = imutils.resize(image, width=500)```
 
@@ -43,25 +44,23 @@ Hiển thị hình ảnh ban đầu
 ```cv2.imshow("Original Image", image)```
 
 Chuyển ảnh màu qua ảnh trắng đen  
-```gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-cv2.imshow("1 - Grayscale Conversion", gray)```
 
 Loại bỏ nhiễu bằng phương pháp iterative bilateral filter. Phép biến đổi này giúp loại các nhiễu và giữ lại các cạnh trong hình ảnh  
-```gray = cv2.bilateralFilter(gray, 11, 17, 17)
-cv2.imshow("2 - Bilateral Filter", gray)```
+```gray = cv2.bilateralFilter(gray, 11, 17, 17)```
+```cv2.imshow("2 - Bilateral Filter", gray)```
 
-# Tìm các Edges trong hình trắng đen
-```edged = cv2.Canny(gray, 170, 200)
-cv2.imshow("4 - Canny Edges", edged)```
+Tìm các Edges trong hình trắng đen
+```edged = cv2.Canny(gray, 170, 200)```
+```cv2.imshow("4 - Canny Edges", edged)```
 
-# Tìm các countours (đường viền) trong hình ảnh
-```( cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
-cnts=sorted(cnts, key = cv2.contourArea, reverse = True)[:30] #sort contours based on their area keeping minimum required area as '30' (anything smaller than this will not be considered)
-NumberPlateCnt = []```
+Tìm các countours (đường viền) trong hình ảnh
+```( cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)```
+```cnts=sorted(cnts, key = cv2.contourArea, reverse = True)[:30] ```
+```NumberPlateCnt = []```
 
 Với mỗi đường viền, ta sẽ xấp xỉ bằng một hình đa giác lồi. Nếu đa giác có 4 cạnh thì đó có khả năng là bảng số
-```count = 0
-for c in cnts:
+```count = 0```
+```for c in cnts:
         peri = cv2.arcLength(c, True)
         approx = cv2.approxPolyDP(c, 0.02 * peri, True)
         if len(approx) == 4:  # Chọn các đường viền có đa giác xấp xỉ là 4 đỉnh
