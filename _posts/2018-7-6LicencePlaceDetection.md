@@ -108,6 +108,11 @@ cv2.waitKey(0)
 + Không cần dữ liệu để huấn luyện.  
 Một số ví dụ phát hiện được bảng số
 
+![ảnh xám](/img/20180706/OK1.jpeg)   
+
+![ảnh xám](/img/20180706/OK2.jpeg)  
+
+
 ### Nhược điểm
 Phương pháp mình giới thiệu trong bài này khá đơn giản nên nó sẽ có một số nhược điểm nhứ sau:
 + khi kích thước biển số xe trong hình thay đổi (ví dụ qua lớn hoặc quá bé) thì phương pháp sẽ gặp lỗi. Nên khi sử dụng chúng ta phải có ràng buộc khoảng cách từ camera và xe là cố định thì phương pháp sẽ chạy khá ổn.  
@@ -115,6 +120,10 @@ Phương pháp mình giới thiệu trong bài này khá đơn giản nên nó s
 
 Sau đây là một số ví dụ chưa phát hiện được bảng số
 
+
+![ảnh xám](/img/20180706/Error1.jpeg)   
+
+![ảnh xám](/img/20180706/Error2.jpeg)  
 
 
 ### 4. Kết bài <a name="conclusion"></a>
