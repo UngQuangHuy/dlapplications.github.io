@@ -7,7 +7,7 @@ tags: [Deep learning ứng dụng]
 math: true
 ---
 
-# Nền tảng của deep learning - Multi-layer Perceptron
+# Nhận diện bảng số xe (Phần 1)
 ### Mục lục:
 1. [Mở đầu](#intro)
 2. [Phát hiện bảng số xe](#method )
@@ -30,7 +30,7 @@ Cài đặt thư viện imutils
 Các bước để phát hiện bảng số xe bao gồm:  
 + Đọc ảnh lên.  
 
-![ảnh gốc](/img/20180706/image.jpeg)
+![ảnh gốc](/img/20180706/images.jpeg)
 
 + Chuyển ảnh màu qua ảnh xám.  
 
@@ -41,7 +41,7 @@ Các bước để phát hiện bảng số xe bao gồm:
 ![ảnh đã loại bỏ nhiễu](/img/20180706/image_bilateral.jpeg)
 + Tìm các Edges trong hình xám. Ở đây mình dung phương pháp canny.  
 
-![ảnh sau khi tìm các edges](/img/20180706/image_canny.jpeg)
+![ảnh sau khi tìm các edges](/img/20180706/image_cany.jpeg)
 + Tìm các countours (đường viền) trong hình ảnh. Sau đó sắp xếp lại theo diện tích của các đường viền và loại bỏ các đường viền có diện tích nhỏ hơn 30.   
 
 ![ảnh chứa các đường viền có diện tích lớn hơn 30](/img/20180706/image_countour.jpeg)
@@ -105,14 +105,19 @@ cv2.waitKey(0)
 ### 3.Ưu nhược điểm của phương pháp <a name="limitation"></a>)
 ### Ưu điểm
 + Phương pháp đơn giản, nhanh, nhỏ gọn. Có thể chạy trên rất nhiều platform như windows, linux, mac, ...
+Một số ví dụ phát hiện được bảng số
+
 ### Nhược điểm
 Phương pháp mình giới thiệu trong bài này khá đơn giản nên nó sẽ có một số nhược điểm nhứ sau:
 + khi kích thước biển số xe trong hình thay đổi (ví dụ qua lớn hoặc quá bé) thì phương pháp sẽ gặp lỗi. Nên khi sử dụng chúng ta phải có ràng buộc khoảng cách từ camera và xe là cố định thì phương pháp sẽ chạy khá ổn.  
 + Phương pháp này sẽ gặp vấn đề nếu ảnh bị nhoè, độ phân giải thấp hoặc điều kiện ánh sáng không tốt. Nhưng điều này các bạn có thể kiểm chứng bằng thực tế nhé.  
 
+Sau đây là một số ví dụ chưa phát hiện được bảng số
+
+
 
 ### 4. Kết bài <a name="conclusion"></a>
-
+Trong bài này mình giới thiệu cho các bạn phương pháp phát hiện bảng số đơn giản bằng xử lý hình ảnh. Trong bài tiếp theo mình sẽ tiếp tục bước tiếp theo là nhận diện số và chữ trong bảng số.  
 
 
 
