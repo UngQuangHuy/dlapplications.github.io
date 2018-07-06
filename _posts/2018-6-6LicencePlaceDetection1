@@ -1,0 +1,32 @@
+---
+layout: post
+title: Nhận diện bảng số xe (Phần 1)
+subtitle: Deep learning ứng dụng
+hidden: false
+tags: [Deep learning ứng dụng]
+math: true
+---
+
+# Nền tảng của deep learning - Multi-layer Perceptron
+### Mục lục:
+1. [Mở đầu](#intro)
+2. [Phát hiện bảng số xe](#notation )
+3. [Từ input tới output ](#forward)
+4. [Kết bài](#conclusion)
+
+
+### 1. Mở đầu <a name="intro"></a>
+Hôm nay nhóm sẽ bắt đầu một số bài viết giúp bạn thực hiện một ứng dụng thực tế. Ứng dụng đầu tiên bọn mình chọn đó là nhận diện biển số xe. Quá trình nhận diện bảng số xe bao gồm các bước sau đây
+### Phát hiện bảng số xe trong hình
+### Đọc chữ trên biển số vừa tìm được
+Trong phần 1 này mình sẽ hướng dẫn các bạn phát hiện bảng số xe đơn giản bằng cách sử dụng công cụ openCV. Phương pháp này sử dụng các phép toán xử lý ảnh thông thường nên sẽ chạy rất nhanh so với các phương pháp Deep Learning.
+
+### 2. Cài đặt phần mềm <a name="notation"></a>
+
+
+### 4. Kết bài <a name="conclusion"></a>
+
+
+
+
+
