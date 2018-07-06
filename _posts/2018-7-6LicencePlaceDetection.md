@@ -104,7 +104,8 @@ cv2.waitKey(0)
 ```
 ### 3.Ưu nhược điểm của phương pháp <a name="limitation"></a>)
 ### Ưu điểm
-+ Phương pháp đơn giản, nhanh, nhỏ gọn. Có thể chạy trên rất nhiều platform như windows, linux, mac, ...
++ Phương pháp đơn giản, nhanh, nhỏ gọn. Có thể chạy trên rất nhiều platform như windows, linux, mac, ...  
++ Không cần dữ liệu để huấn luyện.  
 Một số ví dụ phát hiện được bảng số
 
 ### Nhược điểm
