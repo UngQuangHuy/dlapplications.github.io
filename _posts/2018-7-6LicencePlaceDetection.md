@@ -3,7 +3,7 @@ layout: post
 title: Nhận diện bảng số xe (Phần 1)
 subtitle: Deep learning ứng dụng
 hidden: false
-tags: [Deep learning ứng dụng]
+tags: [Nhận diện bảng số ]
 math: true
 ---
 
@@ -11,7 +11,7 @@ math: true
 ### Mục lục:
 1. [Mở đầu](#intro)
 2. [Phát hiện bảng số xe](#method )
-3. [Hạn chế của phương pháp ](#limitation)
+3. [Ưu nhược điểm của phương pháp ](#limitation)
 4. [Kết bài](#conclusion)
 
 
