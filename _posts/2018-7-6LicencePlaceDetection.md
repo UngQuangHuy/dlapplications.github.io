@@ -108,9 +108,9 @@ cv2.waitKey(0)
 + Không cần dữ liệu để huấn luyện.  
 Một số ví dụ phát hiện được bảng số
 
-![ảnh xám](/img/20180706/OK1.jpeg)   
+![ảnh nhận diện đúng 1](/img/20180706/OK1.jpeg)   
 
-![ảnh xám](/img/20180706/OK2.jpeg)  
+![ảnh  nhận diện đúng 2](/img/20180706/OK2.jpeg)  
 
 
 ### Nhược điểm
@@ -121,9 +121,9 @@ Phương pháp mình giới thiệu trong bài này khá đơn giản nên nó s
 Sau đây là một số ví dụ chưa phát hiện được bảng số
 
 
-![ảnh xám](/img/20180706/Error1.jpeg)   
+![ảnh nhận diện sai 1](/img/20180706/Error1.jpeg)   
 
-![ảnh xám](/img/20180706/Error2.jpeg)  
+![ảnh nhận diện sai 1](/img/20180706/Error2.jpeg)  
 
 
 ### 4. Kết bài <a name="conclusion"></a>
