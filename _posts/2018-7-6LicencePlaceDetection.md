@@ -30,24 +30,24 @@ Cài đặt thư viện imutils
 Các bước để phát hiện bảng số xe bao gồm:  
 + Đọc ảnh lên.  
 
-![ảnh gốc]()
+![ảnh gốc](/img/20180706/image.jpeg)
 
 + Chuyển ảnh màu qua ảnh xám.  
 
-![ảnh xám]()
+![ảnh xám](/img/20180706/image_gray.jpeg)
 + Loại bỏ nhiễu bằng phương pháp iterative bilateral filter. Phép biến đổi này giúp loại các nhiễu và giữ lại các cạnh trong hình ảnh.  
 
 
-![ảnh đã loại bỏ nhiễu]()
+![ảnh đã loại bỏ nhiễu](/img/20180706/image_bilateral.jpeg)
 + Tìm các Edges trong hình xám. Ở đây mình dung phương pháp canny.  
 
-![ảnh sau khi tìm các edges]()
+![ảnh sau khi tìm các edges](/img/20180706/image_canny.jpeg)
 + Tìm các countours (đường viền) trong hình ảnh. Sau đó sắp xếp lại theo diện tích của các đường viền và loại bỏ các đường viền có diện tích nhỏ hơn 30.   
 
-![ảnh chứa các đường viền có diện tích lớn hơn 30]()
+![ảnh chứa các đường viền có diện tích lớn hơn 30](/img/20180706/image_countour.jpeg)
 + Với mỗi đường viền, ta sẽ xấp xỉ bằng một hình đa giác lồi. Nếu đa giác có 4 cạnh thì đó có khả năng là bảng số.  
 
-![kết quả]()
+![kết quả](/img/20180706/image_result.jpeg)
 
 ```
 import numpy as np
