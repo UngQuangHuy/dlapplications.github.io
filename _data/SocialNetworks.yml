@@ -11,6 +11,11 @@ facebook:
   baseURL: "https://www.facebook.com/"
   icon: "fa-facebook"
 
+facebook_forum:
+  name: "Facebook forum"
+  baseURL: "https://www.facebook.com/"
+  icon: "fa-comments"
+
 github:
   name: "GitHub"
   baseURL: "https://github.com/"
