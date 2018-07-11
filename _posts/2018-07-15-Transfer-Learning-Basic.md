@@ -117,14 +117,14 @@ Dưới đây là các chiến lược thường dùng:
 
 ### 5. Kết bài <a name="conclusion"></a>
 #### 1. Ứng dụng
-Transfer Learning mang đến những model mới với độ chính xác cao trong thời gian ngắn, hầu hết các model dùng transfer learning được sử dụng trong các nghiên cứu về Computer Vision (CV), chú trọng vào việc extract các feature từ ảnh hoặc video một cách hiệu quả như một cách thay thế cho các phương pháp cũ (AKAZE, ORB, BRISK, ...) và kết hợp những ý tưởng mới để tận dụng các feature này (Object Detection, Object Recognition, Human Pose Estimation, ...)
+Transfer Learning mang đến những model mới với độ chính xác cao trong thời gian ngắn, hầu hết các model dùng transfer learning được sử dụng trong các nghiên cứu về Computer Vision (CV), chú trọng vào việc trích xuất các features từ ảnh hoặc video một cách hiệu quả như một cách thay thế cho các phương pháp cũ (AKAZE, ORB, BRISK, ...) và kết hợp những ý tưởng mới để tận dụng các features này (Object Detection, Object Recognition, Human Pose Estimation, ...).
 
-Nhưng không phải là Natural Language Processing (NLP) không sử dụng Transfer Learning, thực tế thì: nếu CV dùng Convolutional Network để extract feature từ ảnh thì NLP dùng Word Embeddings như một cách để extract các feature từ các từ ngữ thành những vectors. Hiệu quả thực tiễn của Word Embeddings [cao hơn](https://www.datacamp.com/community/tutorials/lda2vec-topic-model) hẳn one-hot encodings về khả năng đại diện thông tin.
+Transfer Learning cũng được sử dụng rất nhiều trong Natural Language Processing (NLP). Trên thực tế thì: nếu CV dùng Convolutional Network để extract feature từ ảnh thì NLP dùng Word Embeddings như một cách để trích xuất các features từ các từ thành những vectors. Hiệu quả thực tiễn của Word Embeddings [cao hơn](https://www.datacamp.com/community/tutorials/lda2vec-topic-model) hẳn one-hot encodings về khả năng biểu diễn thông tin.
 
 #### 2. Hạn chế?
-Transfer Learning không phải một kỹ thuật dễ sử dụng, nếu bạn sai sót trong quá trình transfer architecture của pretrained hay thêm/bớt không đúng layer thì accuracy sẽ **thấp không tưởng tượng được**, khi đó bạn sẽ phải transfer lại từ đấu.
+Transfer Learning không phải một kỹ thuật dễ sử dụng, nếu bạn sai sót trong quá trình transfer architecture của pretrained hay thêm/bớt không đúng layer thì accuracy sẽ **thấp không tưởng tượng được**, khi đó bạn sẽ phải kiểm tra lại quá trình sửa các layer hoặc làm lại từ đấu.
 
-Bạn chỉ có thể transfer learning khi mà có pretrained model liên quan trực tiếp đến target tasks của bạn thôi, không phải pretrained model nào cũng có thể dùng để transfer vào target tasks mà bạn mong muốn được.
+Bạn chỉ có thể dùng Transfer Learning khi mà có pretrained model liên quan trực tiếp đến target tasks của bạn thôi, không phải pretrained model nào cũng có thể dùng để transfer vào target tasks mà bạn mong muốn được. Ví dụ bạn không nên dùng pretrained model cho hình ảnh màu để fine-tuning cho việc nhận diện chữ viết tay.
 Trước khi dùng Transfer Learning, cũng như bao nhiêu hướng đi khác khi học tập cũng như nghiên cứu, bạn phải xác định rằng:
 * Liệu có cần thiết phải transfer learning không?
 * Chọn pretrained model nào là tốt nhất?
