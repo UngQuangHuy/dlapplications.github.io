@@ -33,6 +33,7 @@ Bạn không có một bộ GPU mạnh và không muốn đăng ký AWS hay dùn
 Hay bạn không có một bộ dataset lớn trong task mà mình phải thực hiện?
 
 Well, đã đến lúc bạn hướng tới sự giúp đỡ của Transfer Learning, một kỹ thuật đưa đến những network đủ tốt chỉ với lượng dataset nhỏ trên cơ sở những network có sẵn.
+
 Để tận dụng được các pretrained network này là một nghệ thuật được nghiên cứu từ thập niên 90. Khi Lorien Pratt [thực nghiệm](http://papers.nips.cc/paper/641-discriminability-based-transfer-between-neural-networks.pdf) lần đầu năm 1993 và sau đó viết lại nó dưới dạng một lý thuyết toán học (formal analysis) năm 1998.
 
 Đây sẽ là bài thứ nhất của Transfer Learning, giúp cho các bạn có một cái nhìn tổng quan về các mặt của Transfer Learning trước khi đi vào thực hành ở bài viết kế tiếp ;)
@@ -43,10 +44,12 @@ Well, đã đến lúc bạn hướng tới sự giúp đỡ của Transfer Lear
 + Dataset và các bước tạo ra một model.
 
 ### 1. Giới thiệu <a name="intro"></a>
-Ngày xửa ngày xưa, khi nền văn minh của loài người chưa phát triển, các nhóm người nhỏ sinh sống trong những hang hốc. Khi con người biết trồng trọt, họ chuyển ra những đồng bằng sinh sống và tại đó, họ gặp những bộ tộc khác. Việc hiểu được nhau trở nên khó khăn khi số người càng ngày càng tăng.
+Ngày xửa ngày xưa, khi nền văn minh của loài người chưa phát triển, các nhóm người nhỏ sinh sống trong những hang hốc. Khi con người biết trồng trọt, họ chuyển ra những đồng bằng sinh sống và tại đó, họ gặp những bộ tộc khác. 
+Việc hiểu được nhau trở nên khó khăn khi số người càng ngày càng tăng.
+
 Và thế là chúng ta phát minh ra ngôn ngữ, một cách để *truyền đạt* ý nghĩ của mình cho người xung quanh.
 
-Việc nghiên cứu khoa học, đưa ra những ý tưởng mới thì quan trọng nhất là ***không làm lại những gì đã được làm rồi mà không làm tốt hơn được*** vì thời gian sẽ không cho phép sự lãng phí như vậy xảy ra. Đặc biệt là trong Deep Learning, một ngành phát triển nhanh đến chóng mặt hiện nay, những ý tưởng mình nghĩ ra chắc gì đã chưa có ai làm? Deep Learing lan tỏa đến mọi lĩnh vực, vì thế cái quan trọng là sử dụng những prior work sẵn có để tạo nên một model mới tốt hơn, vì chính việc này đã rất khó khăn và tốn thời gian rồi chứ không nói đến nghiên cứu lại từ đầu mọi thứ.
+Việc nghiên cứu khoa học, đưa ra những ý tưởng mới thì quan trọng nhất là ***không làm lại những gì đã được làm rồi mà không làm tốt hơn được*** vì thời gian sẽ không cho phép sự lãng phí như vậy xảy ra. Đặc biệt là trong Deep Learning, một ngành phát triển nhanh đến chóng mặt hiện nay, những ý tưởng mình nghĩ ra chắc gì đã chưa có ai làm? Deep Learing lan tỏa đến mọi lĩnh vực, vì thế cái quan trọng là sử dụng những prior works sẵn có để tạo nên một model mới tốt hơn, vì chính việc này đã rất khó khăn và tốn thời gian rồi chứ không nói đến nghiên cứu lại từ đầu mọi thứ.
 
 ### 2. Các định nghĩa <a name="first"></a>
 #### 1. Model
@@ -128,6 +131,7 @@ Tóm lại, **fine-tuning** là việc train một transfered model nhằm mục
 Transfer Learning không phải một kỹ thuật dễ sử dụng, nếu bạn sai sót trong quá trình transfer architecture của pretrained hay thêm/bớt không đúng layer thì khi train, accuracy sẽ **thấp không tưởng tượng được**, khi đó bạn sẽ phải kiểm tra lại quá trình sửa các layer hoặc làm lại từ đấu. ***Lưu ý***: khi bạn đạt accuracy thấp như vậy, chúng ta không gọi quá trình train là fine-tuning vì nó không phù hợp với định nghĩa.
 
 Bạn chỉ có thể dùng Transfer Learning khi mà có pretrained model liên quan trực tiếp đến target tasks của bạn thôi, không phải pretrained model nào cũng có thể dùng để transfer vào target tasks mà bạn mong muốn được. Ví dụ bạn không nên dùng pretrained model cho hình ảnh màu để fine-tuning cho việc nhận diện chữ viết tay.
+
 Trước khi dùng Transfer Learning, cũng như bao nhiêu hướng đi khác khi học tập cũng như nghiên cứu, bạn phải xác định rằng:
 * Liệu có cần thiết phải transfer learning không?
 * Chọn pretrained model nào là tốt nhất?
