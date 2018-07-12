@@ -110,15 +110,17 @@ Tóm lại, **fine-tuning** là việc train một transfered model nhằm mục
 
 ### 4. Lợi ích và hạn chế <a name="third"></a>
 #### 1. Lợi ích
-##### a. Thời gian
-Việc sử dụng Pretrained Model bản thân nó không chỉ giúp giảm thời gian vào việc tạo ra một model mới để thực hiện một target tasks mà dựa trên một source tasks sẵn có, mà còn giảm thời gian train một model từ đầu vì Weights của phần source tasks đã có sẵn.
+- a. Thời gian
 
-##### b. Hiệu quả
-Bạn nghĩ mình có thể tạo ra một model mới tốt hơn pretrained model trên cùng source tasks không?
+    Việc sử dụng Pretrained Model bản thân nó không chỉ giúp giảm thời gian vào việc tạo ra một model mới để thực hiện một target tasks mà dựa trên một source tasks sẵn có, mà còn giảm thời gian train một model từ đầu vì Weights của phần source tasks đã có sẵn.
 
-Bạn có muốn tạo một model mới cùng source tasks mà phải có accuracy cao hơn các pretrained state-of-the-art không?
+- b. Hiệu quả
 
-Nếu bạn quá lười để làm điều đó, pretrained model đã cung cấp cho bạn một accuracy cao ngay từ đầu, do đó khi train trên target tasks thì transfered model của bạn sẽ tiếp tục tăng accuracy này thay vì phải bắt đầu từ điểm có accuracy thấp hơn.
+    Bạn nghĩ mình có thể tạo ra một model mới tốt hơn pretrained model trên cùng source tasks không?
+
+    Bạn có muốn tạo một model mới cùng source tasks mà phải có accuracy cao hơn các pretrained state-of-the-art không?
+
+    Nếu bạn quá lười để làm điều đó, pretrained model đã cung cấp cho bạn một accuracy cao ngay từ đầu, do đó khi train trên target tasks thì transfered model của bạn sẽ tiếp tục tăng accuracy này thay vì phải bắt đầu từ điểm có accuracy thấp hơn.
 
 ![Performance](/img/20180715/0.png)*So sánh tương quan hiệu quả của model train từ đầu và transfered model*
 
