@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sơ lược về Transfer Learning I.
-hidden: true
+hidden: false
 bigimg: /img/20180715/title.jpg
 tags: [basic]
 math: true
