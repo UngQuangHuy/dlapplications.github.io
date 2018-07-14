@@ -3,7 +3,7 @@ layout: post
 title: Sơ lược về Transfer Learning I.
 hidden: false
 bigimg: /img/20180715/title.jpg
-tags: [basic]
+tags: [basic, dl_basic]
 math: true
 ---
 

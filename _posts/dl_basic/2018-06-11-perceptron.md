@@ -2,7 +2,7 @@
 layout: post
 title: Nền tảng của deep learning - Perceptron
 subtitle: Deep learning cơ bản (phần 1)
-tags: [beginner, perceptron]
+tags: [beginner, perceptron, dl_basic]
 math: true
 ---
 # Nền tảng của deep learning - Perceptron

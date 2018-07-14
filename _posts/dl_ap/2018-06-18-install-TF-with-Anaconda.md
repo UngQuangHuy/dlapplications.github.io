@@ -3,7 +3,7 @@ layout: post
 title: Cài đặt Frameworks để làm Deep Learning.
 hidden: false
 subtitle: Deep Learning và Ứng Dụng
-tags: [cài đặt deep learning frameworks]
+tags: [cài đặt deep learning frameworks, dl_ap]
 math: true
 ---
 
