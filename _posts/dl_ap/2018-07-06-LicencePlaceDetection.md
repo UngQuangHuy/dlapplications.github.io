@@ -52,23 +52,23 @@ Các bước để phát hiện bảng số xe bao gồm:
 
 + Tìm các countours (đường viền) trong hình ảnh. Sau đó sắp xếp lại theo diện tích của các đường viền và loại bỏ các đường viền có diện tích nhỏ hơn 30.   
 
-```( cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)```
-```cnts=sorted(cnts, key = cv2.contourArea, reverse = True)[:30]```
+```( cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)```  
+```cnts=sorted(cnts, key = cv2.contourArea, reverse = True)[:30]```  
 
 ![ảnh chứa các đường viền có diện tích lớn hơn 30](/img/20180706/image_countour.jpeg)  
 
 + Với mỗi đường viền, ta sẽ xấp xỉ bằng một hình đa giác lồi. Nếu đa giác có 4 cạnh thì đó có khả năng là bảng số.  
 
-```for c in cnts:```
-```   peri = cv2.arcLength(c, True)```
-```    approx = cv2.approxPolyDP(c, 0.02 * peri, True)```
-```    cv2.drawContours(tmp, [c], -1, (0,0,128), 2)```
-```    if len(approx) == 4:```
-```        NumberPlateCnt.append(approx)```
+```for c in cnts:```  
+```   peri = cv2.arcLength(c, True)```  
+```    approx = cv2.approxPolyDP(c, 0.02 * peri, True)```  
+```    cv2.drawContours(tmp, [c], -1, (0,0,128), 2)```  
+```    if len(approx) == 4:```  
+```        NumberPlateCnt.append(approx)```  
 
 Vẽ lại các bảng số đã tìm được.  
-```for plate in NumberPlateCnt:```
-```    cv2.drawContours(image, [plate], -1, (0,255,0), 2)```
+```for plate in NumberPlateCnt:```  
+```    cv2.drawContours(image, [plate], -1, (0,255,0), 2)```  
 
 ![kết quả](/img/20180706/image_result.jpeg)  
 
