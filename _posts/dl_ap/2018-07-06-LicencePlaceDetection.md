@@ -47,7 +47,8 @@ Các bước để phát hiện bảng số xe bao gồm:
 ![ảnh đã loại bỏ nhiễu](/img/20180706/image_bilateral.jpeg)  
 
 + Tìm các Edges trong hình xám. Ở đây mình dung phương pháp canny.  
-```edged = cv2.Canny(gray, 170, 200)```
+```edged = cv2.Canny(gray, 170, 200)```  
+
 ![ảnh sau khi tìm các edges](/img/20180706/image_cany.jpeg)  
 
 + Tìm các countours (đường viền) trong hình ảnh. Sau đó sắp xếp lại theo diện tích của các đường viền và loại bỏ các đường viền có diện tích nhỏ hơn 30.   
