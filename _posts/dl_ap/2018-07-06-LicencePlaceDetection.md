@@ -66,13 +66,13 @@ Các bước để phát hiện bảng số xe bao gồm:
 ```    if len(approx) == 4:```  
 ```        NumberPlateCnt.append(approx)```  
 
-Vẽ lại các bảng số đã tìm được.  
++ Vẽ lại các bảng số đã tìm được.  
 ```for plate in NumberPlateCnt:```  
 ```    cv2.drawContours(image, [plate], -1, (0,255,0), 2)```  
 
 ![kết quả](/img/20180706/image_result.jpeg)  
 
-Các bạn có thể sử dụng code tổng hợp ![tại đây](https://github.com/dlapplications/License-Plate-Recognition/blob/master/plateDetection.py)
+Các bạn có thể sử dụng code tổng hợp [tại đây](https://github.com/dlapplications/License-Plate-Recognition/blob/master/plateDetection.py)
 
 
 ### 4.Ưu nhược điểm của phương pháp <a name="limitation"></a>)
