@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "CNN Introduction"
-hidden: false
+hidden: true
 description: "CNN Introduction"
 categories: [cnn, tutorial]
 tags: [demo, beginner]
