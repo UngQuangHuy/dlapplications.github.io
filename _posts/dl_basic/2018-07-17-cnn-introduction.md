@@ -43,7 +43,7 @@ Giống như các lớp ẩn khác, lớp tích chập lấy dữ liệu đầu 
 Trong ví dụ này, CNN được sử dụng để phân loại tập các ảnh viết tay của các số từ $0$ tới $9$. Đầu vào là những bức ảnh trắng đen (Gray Scale) và được biểu diễn bởi một ma trận các điểm ảnh với kích thước cố định $h\times w$. Lớp tích chập đầu tiên của CNN sử dụng $4$ bộ lọc kích thước $3\times3$: $F_1$, $F_2$, $F_3$, $F_4$ với giá trị tương ứng như trong hình 1. Các giá trị tại mỗi ô của các bộ lọc có thể được biểu diễn bởi màu sắc tương ứng với Đen ($-1$), Xám ($0$), Trắng ($1$) như trong hình dưới đây.
 
   <p align='center'>
-    <img src='img/20180717/edge-filters.png' style='height: 200px;'></img>
+    <img src='/img/20180717/edge-filters.png' style='height: 200px;'></img>
   </p>
 
   ><b>Hình 1</b>: Bộ lọc được sử dụng trong lớp tích chập đầu tiên là các ma trận kích thước <b>3x3</b> của -1, 0 và 1.
