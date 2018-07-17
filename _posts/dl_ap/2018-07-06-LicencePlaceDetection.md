@@ -90,8 +90,8 @@ Một số ví dụ phát hiện được bảng số
 
 
 ### Nhược điểm
-Phương pháp mình giới thiệu trong bài này khá đơn giản nên nó sẽ có một số nhược điểm nhứ sau:
-+ khi kích thước biển số xe trong hình thay đổi (ví dụ qua lớn hoặc quá bé) thì phương pháp sẽ gặp lỗi. Nên khi sử dụng chúng ta phải có ràng buộc khoảng cách từ camera và xe là cố định thì phương pháp sẽ chạy khá ổn.  
+Phương pháp mình giới thiệu trong bài này khá đơn giản nên nó sẽ có một số nhược điểm như sau:
++ khi kích thước biển số xe trong hình thay đổi (ví dụ qua lớn hoặc quá bé) thì phương pháp sẽ gặp lỗi. Nên khi sử dụng chúng ta phải có ràng buộc khoảng cách từ camera và xe là cố định. Khi đó kích thước biển số không thay đổi nhiều thì phương pháp sẽ chạy khá ổn.  
 + Phương pháp này sẽ gặp vấn đề nếu ảnh bị nhoè, độ phân giải thấp hoặc điều kiện ánh sáng không tốt. Nhưng điều này các bạn có thể kiểm chứng bằng thực tế nhé.  
 
 Sau đây là một số ví dụ chưa phát hiện được bảng số
@@ -101,6 +101,7 @@ Sau đây là một số ví dụ chưa phát hiện được bảng số
 
 ![ảnh nhận diện sai 1](/img/20180706/Error2.jpeg)  
 
+Nếu các bạn muốn khắc phục các nhược điểm trên, mình khuyên nên tìm hiểu object detection trong deep learning.
 
 ### 5. Kết bài <a name="conclusion"></a>
 Trong bài này mình giới thiệu cho các bạn phương pháp phát hiện bảng số đơn giản bằng xử lý hình ảnh. Trong bài tiếp theo mình sẽ tiếp tục bước tiếp theo là nhận diện số và chữ trong bảng số.  
