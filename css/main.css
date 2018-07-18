@@ -19,11 +19,16 @@ body {
 }
 p {
   line-height: 1.5;
-  margin: 30px 0;
+  margin: 10px 0;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
+}
+h5 {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 a {
   color: {{ site.link-col }};
@@ -33,7 +38,8 @@ a:focus {
   color: {{ site.hover-col }};
 }
 blockquote {
-  color: #808080;
+  color: black;
+  font-size: 14px;
   font-style: italic;
 }
 blockquote p:first-child {

@@ -195,7 +195,7 @@ Phép chập với nhiều bộ lọc  trình bày ở trên có thể chuyển 
   <img src='/img/20180717/cnn-notations.png' style='height: 230px;'>
 </p>
 
-><b>Hình 11</b>: Các ký hiệu cơ bản của một CNN.</b>
+><b>Hình 11</b>: Các ký hiệu cơ bản của một CNN.
 
 ### 5. CNN đơn giản
 
