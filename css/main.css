@@ -17,6 +17,7 @@ body {
   background-attachment: fixed;
   {% endif %}
 }
+.MathJax { font-size: 1.3em !important; }
 p {
   line-height: 1.5;
   margin: 10px 0;
@@ -25,9 +26,18 @@ h1,h2,h3,h4,h5,h6 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 800;
 }
-h5 {
+
+h4 {
   font-size: 18px;
-  margin-top: 10px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 a {
@@ -41,6 +51,7 @@ blockquote {
   color: black;
   font-size: 14px;
   font-style: italic;
+  margin: 0px;
 }
 blockquote p:first-child {
   margin-top: 0;

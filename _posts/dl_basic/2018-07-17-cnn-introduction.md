@@ -13,7 +13,7 @@ redirect_from:
 
 ### Mục lục:
 - [1. Thị giác máy tính (Computer Vision)](#1-thị-giác-máy-tính-computer-vision)
-- [2. Mạng nơ-ron tích chập (Convolutional Neural Network - CNN)](#2-mạng-nơ-ron-tích-chập-convolutional-neural-network---cnnu)
+- [2. Mạng nơ-ron tích chập (Convolutional Neural Network)](#2-mạng-nơ-ron-tích-chập-convolutional-neural-network)
 - [3. Phép chập khối](#3-phép-chập-khối)
 - [4. Mạng CNN một lớp](#4-mạng-cnn-một-lớp)
 - [5. CNN đơn giản](#5-cnn-đơn-giản)
@@ -29,15 +29,17 @@ Nhìn vào một bức ảnh, một người với thị giác bình thường c
 
 Mạng Nơ-ron truyền thống (Neural Network) hoạt động không thực sự hiệu quả với dữ liệu đầu vào là hình ảnh. Nếu coi mỗi điểm ảnh là một thuộc tính (feature), một ảnh RBG kích thước ($64\times64$) có $12288$ ($=64\times64\times3$) thuộc tính. Nếu kích thước ảnh tăng lên $1000\times10000$, chúng ta có $3$ triệu ($3M$) thuộc tính cho mỗi ảnh đầu vào. Nếu sử dụng mạng liên kết đầy đủ (*fully connected NN*) và giả sử lớp thứ 2 có $1000$ thành phần (units/ neurons), ma trận trọng số sẽ có kích thước $1000\times3M$ tương đương với $3B$ trọng số cần huấn luyện (learning). Điều này yêu cầu khối lượng tính toán cực lớn (expensive computational cost) và thường dẫn đến [overfitting](https://en.wikipedia.org/wiki/Overfitting) do không đủ dữ liệu huấn luyện.
 
-### 2. Mạng nơ-ron tích chập (Convolutional Neural Network - CNN)
+### 2. Mạng nơ-ron tích chập (Convolutional Neural Network)
 > <span style='background-color: yellow'>**Mạng nơ-ron tích chập (CNN hay ConvNet)**</span></span>  là mạng nơ-ron ([Wikipedia](https://en.wikipedia.org/wiki/Artificial_neural_network), [bài báo](https://www.sciencedirect.com/science/article/pii/S0731708599002721), [video](https://www.youtube.com/watch?v=aircAruvnKk)) phổ biến nhất được dùng cho dữ liệu ảnh. Bên cạnh các lớp liên kết đầy đủ (FC layers), <span style='background-color: #AED6F1'>CNN còn đi cùng với các lớp ẩn đặc biệc giúp phát hiện và trích xuất những đặc trưng - chi tiết (patterns) xuất hiện trong ảnh gọi là **Lớp Tích chập (Convolutional Layers)**</span>. Chính những lớp tích chập này làm CNN trở nên khác biệt so với mạng nơ-ron truyền thống và hoạt động cực kỳ hiệu quả trong bài toán phân tích ảnh. 
 
 #### Lớp tích chập (Convolutional Layers)
-<img src='/img/20180717/note-icon.png' style='height: 20px;'> <span style="font-family:'Papyrus'; font-size:16px;"><font color="blue"><b>Lớp tích chập được dùng để phát hiện và trích xuất đặc trưng - chi tiết của ảnh.</font></span>
+<img src='/img/20180717/note-icon.png' style='height: 20px;'> <span style="font-family:'Papyrus'; font-size:16px;"><font color="blue"><b>Lớp tích chập được dùng để phát hiện và trích xuất đặc trưng - chi tiết của ảnh.</b></font></span>
+
 Giống như các lớp ẩn khác, lớp tích chập lấy dữ liệu đầu vào, thực hiện các phép chuyển đổi để tạo ra dữ liệu đầu vào cho lớp kế tiếp (đầu ra của lớp này là đầu vào của lớp sau). Phép biến đổi được sử dụng là phép tính tích chập. Mỗi lớp tích chập chứa một hoặc nhiều bộ lọc - bộ phát hiện đặc trưng (filter - feature detector) cho phép phát hiện và trích xuất những đặc trưng khác nhau của ảnh. 
 > **Đặc trưng** của ảnh là gì? Đặc trưng ảnh là những chi tiết xuất hiện trong ảnh, từ đơn giản như cạnh, hình khối, chữ viết tới phức tạp như mắt, mặt, chó, mèo, bàn, ghế, xe, đèn giao thông, v.v.. Bộ lọc phát hiện đặc trưng là bộ lọc giúp phát hiện và trích xuất các đặc trừng của ảnh, có thể là bộ lọc góc, cạnh, đường chéo, hình tròn, hình vuông, v.v.
 
 <img src='/img/20180717/note-icon.png' style='height: 20px;'> <span style="font-family:'Papyrus'; font-size:16px"><font color="blue"><b>Bộ lọc ở lớp tích chập càng sâu thì phát hiện các đặc trừng càng phức tạp.</b></font></span>
+
 Độ phức tạp của đặc trưng được phát hiện bởi bộ lọc tỉ lệ thuận với độ sâu của lớp tích chập mà nó thuộc về. Trong mạng CNN, những lớp tích chập đầu tiên sử dụng bộ lọc hình học (geometric filters) để phát hiện những đặc trưng đơn giản như cạnh ngang, dọc, chéo của bức ảnh. Những lớp tích chập sau đó được dùng để phát hiện đối tượng nhỏ, bán hoàn chỉnh như mắt, mũi, tóc, v.v. Những lớp tích chập sâu nhất dùng để phát hiện đối tượng hoàn hỉnh như: chó, mèo, chim, ô tô, đèn giao thông, v.v. Để hiểu cách thức hoạt động của lớp tích chập cũng như phép tính tích chập, hãy cùng xem ví dụ về bộ lọc phát hiện cạnh (edge filters/ detectors) dưới đây.
 
 ##### Ví dụ về bộ lọc cạnh
@@ -133,6 +135,7 @@ Nếu $n + 2p - f$ không chia hết cho $s$, chúng ta lấy chặn dưới ($\
 #### Phép chập khối với một bộ lọc
 
 <img src='/img/20180717/note-icon.png' style='height: 20px;'> <span style="font-family:'Papyrus'; font-size:16px"><font color="blue"><b>Số lớp (layers) của bộ lọc phải bằng số kênh (channels) của ảnh đầu vào.</b></font></span>
+
 Các ví dụ ở trên sử dụng ảnh trong hệ gray và được biểu diễn dưới dạng ma trận 2 chiều (2D). Phép nhân chập cũng có thể dùng cho ảnh màu (3D images). Giả sử chúng ta có ảnh đầu vào kích thước $6\times6$ được biểu diễn trong hệ RGB. Ma trận đầu vào do đó có kích thước $6\times6\times3$ ($3$ kênh màu). Bộ lọc được sử dụng do đó cũng phải có $3$ lớp tương ứng với $3$ kênh màu **đỏ**, **xanh lục** và **xanh lam**.
 
 <p align='center'>
@@ -250,8 +253,9 @@ Một CNN đầy đủ thường chứa đồng thời lớp tích chập, lớp
 
 <p align='center'>
   <img src='/img/20180717/cnn-example.png' style='height: 520px;'>
-  <caption><center><b>Hình 14</b>: Ví dụ về một CNN đầy đủ dùng cho bài toán phân loại số viết tay. Cấu trúc cơ bản của một CNN thường là một vài cụm <i>CONV</i> => <i>POOL</i> theo sau bởi một tập <i>FC</i> và kết thúc bởi một lớp <i>Softmax</i>.</center></caption>
 </p>
+
+><b>Hình 14</b>: Ví dụ về một CNN đầy đủ dùng cho bài toán phân loại số viết tay. Cấu trúc cơ bản của một CNN thường là một vài cụm <i>CONV</i> => <i>POOL</i> theo sau bởi một tập <i>FC</i> và kết thúc bởi một lớp <i>Softmax</i>.
 
 <p align='center'>
   <img src='/img/20180717/simple-cnn-parameters.png' style='height: 240px;'>
@@ -302,52 +306,60 @@ Quá trình huấn luyện tham số không được đề cập chi tiết tron
     + Phát hiện cạnh nghiên $45^o$
 
 2. Giả sử ảnh đầu vào là ảnh màu (hệ RGB) có kích thước $300\times300$ và không sử dụng mạng tích chập. Nếu lớp ẩn đầu tiên có $100$ thành phần (units/ neurons) mỗi thành phần được liên kết đầy đủ với đầu vào, lớp ẩn này có bao nhiêu tham số (bao gồm cả bias)?
+
     + 9,000,001
     + 9,000,100
     + 27,000,001
     + **27,000,100**
 
 3. Giả sử ảnh đầu vào là ảnh màu (hệ RGB) có kích thước $300\times300$ và sử dụng lớp tích chập có $100$ bộ lọc $5\times5$. Lớp tích chập này có bao nhiêu tham số (bao gồm cả *bias*)?
+
     + 2501
     + 2600
     + 7500
     + **7600**
 
 4. Bạn có đầu vào kích thước $63\times63\times16$ và nhân chập nó với $32$ bộ lọc kích thước $7\times7$, sử dụng bước trượt $s=2$, không padding ($p=0$). Kích thước đầu ra là? 
+
     + **29x29x32**
     + 16x16x32
     + 29x29x16
     + 16x16x16
 
 5. Thực hiện padding đầu vào kích thước $15\times15\times8$ với $p=2$ thì thu được ma trận có kích thước nào?
+
     + **19x19x8**
     + 19x19x12
     + 17x17x10
     + 17x17x8
 
 6. Bạn có đầu vào kích thước $63\times63\times16$ và nhân chập nó với $32$ bộ lọc kích thước $7\times7$, sử dụng bước trượt $s=1$. Để kích thước đầu ra bằng với đầu vào (same convolution), giá trị của padding $p$ bằng bao nhiêu?
+
     + 1
     + 2
     + **3**
     + 7
 
 7. Bạn có đầu vào kích thước $32\times32\times16$ và áp dụng pooling sử dụng giá trị cực đại (max poooling) với bước trượt $s=2$ với bộ lọc $f=2$. Kích thức của đầu ra là?
+
     + 15x15x16
     + 32x32x8
     + **16x16x16**
     + 16x16x8
 
 8. Bởi vì các lớp pooling không có tham số cần huấn luyện, nó không ảnh hưởng tới việc tính đạo hàm trong bước backpropagation?
+
     + True
     + **False**
 
-9. **"Chia sẻ tham số"** là một ưu điểm của CNN. Phát biểu sau đây là đúng về tính chất này (chọn tất cả các đáp án đúng)?
+9.  **"Chia sẻ tham số"** là một ưu điểm của CNN. Phát biểu sau đây là đúng về tính chất này (chọn tất cả các đáp án đúng)?
     + [ ] Nó giúp các thông số đã được huấn luyện cho một tác vụ này có thể được sử dụng cho một tác vụ khác (*transfer learning*).
     + [x] Nó giảm số lượng tham số cần huấn luyện, từ đó giảm thiểu overfiting.
     + [x] Nó giúp các bộ phát hiện đặc trưng được sử dụng lại trên nhiều vị trí khác nhau của khối đầu vào.
     + [ ] Nó cho phép thiết lập các tham số bằng không khi sử dụng gradient descent, từ đó tạo thành các liên kết thưa (*sparse connections*).
 
 10. **"Liên kết thưa"** trong CNN được hiểu như thế nào?
+
     + Một cách chuẩn hoán (Regularization) dẫn tới việc thiết lập rất nhiều tham số bằng $0$ khi sử dụng *gradient descent*.
     + Mỗi lớp trong CNN kết nối tới chỉ một hoặc hai lớp khác.
     + **Mỗi thành phần kích hoạt (*activation*) trong lớp kế tiếp phục thuộc vào một số lượng nhỏ thành phần kích hoạt của lớp trước đó.**
