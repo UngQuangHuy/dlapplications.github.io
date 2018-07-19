@@ -2,7 +2,7 @@
 layout: post
 title: Nhận diện bảng số xe (Phần 1)
 subtitle: Deep learning ứng dụng
-hidden: false
+hidden: true
 tags: [Nhận diện bảng số , dl_ap]
 math: true
 ---
