@@ -18,8 +18,8 @@ math: true
 
 ### 1. Mở đầu <a name="intro"></a>
 Hôm nay nhóm sẽ bắt đầu một số bài viết giúp bạn thực hiện một ứng dụng thực tế. Ứng dụng đầu tiên bọn mình chọn đó là nhận diện biển số xe. Quá trình nhận diện bảng số xe bao gồm các bước sau đây  
-### Phát hiện bảng số xe trong hình  
-### Đọc chữ trên biển số vừa tìm được  
+1. Phát hiện bảng số xe trong hình  
+2. Đọc chữ trên biển số vừa tìm được  
 Trong phần 1 này mình sẽ hướng dẫn các bạn phát hiện bảng số xe. Do chưa chuẩn bị được dữ liệu và máy để huấn luyện mô hình 
 Deep Learning, trong bài này mình hướng dẫn phương pháp đơn giản bằng cách sử dụng công cụ openCV. Phương pháp này sử dụng các phép toán xử lý ảnh thông thường nên không cần dữ liệu để huấn luyện và chạy rất nhanh so với các phương pháp Deep Learning.  
 
@@ -31,8 +31,10 @@ Cài đặt thư viện imutils
 ### 3. Phát hiện bảng số xe <a name="method"></a>
 Các bước để phát hiện bảng số xe bao gồm:  
 + Đọc ảnh lên và thay đổi kích thước.  
-```image = cv2.imread('images.jpeg')```  
-```image = imutils.resize(image, width=500)```  
+```
+image = cv2.imread('images.jpeg')
+image = imutils.resize(image, width=500)
+```  
 
 ![ảnh gốc](/img/20180706/images.jpeg)
 
@@ -41,35 +43,40 @@ Các bước để phát hiện bảng số xe bao gồm:
 
 ![ảnh xám](/img/20180706/image_gray.jpeg)  
 
-+ Loại bỏ nhiễu bằng phương pháp iterative bilateral filter. Phép biến đổi này giúp loại các nhiễu và giữ lại các cạnh trong hình ảnh.  
++ Loại bỏ nhiễu bằng phương pháp làm mịn. Có khá nhiều phương pháp làm mịn như lấy trung bình của các pixel lân cận, hay dùng phân bố Gaussian. Tuy nhiên các phương pháp này loại bỏ được nhiễu nhưng cũng làm mất đi các cạnh (Edges) trong hình. Các cạnh này là thông tin quan trọng để chúng ta xác định vùng bảng số nên cần phải giữ lại. Phương pháp iterative bilateral filter giúp chúng ta vừa giúp làm mịn lại tránh loại bỏ cạnh trong hình ảnh. Các bạn có thể tham khảo [chi tiết tại đây](http://eric-yuan.me/bilateral-filtering/)  
 ```gray = cv2.bilateralFilter(gray, 11, 17, 17)```
 
 ![ảnh đã loại bỏ nhiễu](/img/20180706/image_bilateral.jpeg)  
 
-+ Tìm các Edges trong hình xám. Ở đây mình dung phương pháp canny.  
++ Tìm các cạnh trong hình đã được làm mịn ở trên. Ở đây mình dùng phương pháp [Canny edge detection](https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html).  
 ```edged = cv2.Canny(gray, 170, 200)```  
 
 ![ảnh sau khi tìm các edges](/img/20180706/image_cany.jpeg)  
 
-+ Tìm các countours (đường viền) trong hình ảnh. Sau đó sắp xếp lại theo diện tích của các đường viền và loại bỏ các đường viền có diện tích nhỏ hơn 30.   
++ Tìm các countours (các vùng kết nối với nhau) trong hình ảnh. Sau đó sắp xếp lại theo diện tích của các đường viền và loại bỏ các đường viền có diện tích nhỏ hơn 30.   
 
-```( cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)```  
-```cnts=sorted(cnts, key = cv2.contourArea, reverse = True)[:30]```  
+```
+( cnts, _) = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE) 
+cnts=sorted(cnts, key = cv2.contourArea, reverse = True)[:30]
+```  
 
 ![ảnh chứa các đường viền có diện tích lớn hơn 30](/img/20180706/image_countour.jpeg)  
 
 + Với mỗi đường viền, ta sẽ xấp xỉ bằng một hình đa giác lồi. Nếu đa giác có 4 cạnh thì đó có khả năng là bảng số.  
-
-```for c in cnts:```  
-```   peri = cv2.arcLength(c, True)```  
-```    approx = cv2.approxPolyDP(c, 0.02 * peri, True)```  
-```    cv2.drawContours(tmp, [c], -1, (0,0,128), 2)```  
-```    if len(approx) == 4:```  
-```        NumberPlateCnt.append(approx)```  
+```
+for c in cnts:
+   peri = cv2.arcLength(c, True)
+   approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+   cv2.drawContours(tmp, [c], -1, (0,0,128), 2)
+   if len(approx) == 4:
+       NumberPlateCnt.append(approx)
+```  
 
 + Vẽ lại các bảng số đã tìm được.  
-```for plate in NumberPlateCnt:```  
-```    cv2.drawContours(image, [plate], -1, (0,255,0), 2)```  
+```
+for plate in NumberPlateCnt:
+    cv2.drawContours(image, [plate], -1, (0,255,0), 2)
+```  
 
 ![kết quả](/img/20180706/image_result.jpeg)  
 
@@ -101,7 +108,7 @@ Sau đây là một số ví dụ chưa phát hiện được bảng số
 
 ![ảnh nhận diện sai 1](/img/20180706/Error2.jpeg)  
 
-Nếu các bạn muốn khắc phục các nhược điểm trên, mình khuyên nên tìm hiểu object detection trong deep learning.
+Nếu các bạn muốn khắc phục các nhược điểm trên, chúng ta có thể sử dụng object detection trong deep learning. Mình sẽ cố gắng gửi đến các bạn trong thời gian sớm nhất.
 
 ### 5. Kết bài <a name="conclusion"></a>
 Trong bài này mình giới thiệu cho các bạn phương pháp phát hiện bảng số đơn giản bằng xử lý hình ảnh. Trong bài tiếp theo mình sẽ tiếp tục bước tiếp theo là nhận diện số và chữ trong bảng số.  
