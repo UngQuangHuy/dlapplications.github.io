@@ -18,8 +18,8 @@ math: true
 
 ### 1. Mở đầu <a name="intro"></a>
 Hôm nay nhóm sẽ bắt đầu một số bài viết giúp bạn thực hiện một ứng dụng thực tế. Ứng dụng đầu tiên bọn mình chọn đó là nhận diện biển số xe. Quá trình nhận diện bảng số xe bao gồm các bước sau đây  
-1. Phát hiện bảng số xe trong hình  
-2. Đọc chữ trên biển số vừa tìm được  
+I. Phát hiện bảng số xe trong hình  
+II. Đọc chữ trên biển số vừa tìm được  
 Trong phần 1 này mình sẽ hướng dẫn các bạn phát hiện bảng số xe. Do chưa chuẩn bị được dữ liệu và máy để huấn luyện mô hình 
 Deep Learning, trong bài này mình hướng dẫn phương pháp đơn giản bằng cách sử dụng công cụ openCV. Phương pháp này sử dụng các phép toán xử lý ảnh thông thường nên không cần dữ liệu để huấn luyện và chạy rất nhanh so với các phương pháp Deep Learning.  
 
