@@ -1,137 +1,87 @@
 ---
 layout: post
-title: Deep Learning Framework
-subtitle: Deep Learning và Ứng Dụng Phần 2.
-tags: [tutorial, begin, dl_ap]
+title: Deep Learning Next Generation
+subtitle: ???.
+tags: [tutorial, edge computing, deep learning]
 comment: true
 ---
 
-# Sơ lược về các Deep Learning Framework
+# Khi Deep learning gặp Edge computing
 
-## Mục lục
+Nếu như những năm 2010 cụm từ "cloud computing" (tạm dịch là tính toán trên mây) xuất hiện dày đặc trên mặt báo và các hội thảo lớn nhỏ thì trong những năm gần đây, khái niệm “edge computing” (tạm dịch là tính toán ở rìa) đang ngày càng thu hút sự chú ý. Thật vậy, theo báo cáo của Gartner, một công ty chuyên về nghiên cứu và tư vấn công nghệ, edge computing sẽ bùng nổ trong 2 đến 5 năm tới (Hình 1). Trong bài viết này, chúng ta sẽ cùng nhau tìm hiểu sơ lược khái niệm edge computing, mối liên hệ giữa deep learning và edge computing, nguyên nhân dẫn đến sự bùng nổ của edge computing cũng như các ứng dụng hiện tại và tương lai của nó. Cuối cùng, một số nghiên cứu mới nhất về deep learning trên edge sẽ được giới thiệu sơ qua.
 
-### Mục lục:
-1. [Mở đầu](#intro)
-2. [Lựa chọn như thế nào](#tools)
+![Scene_text](/img/20180725/Hinh1.png) 
+Hình 1 - Những công nghệ "hot" đang được phát triển. (Nguồn Gartner)
 
-    2.1 [Các Framework thường dùng](#tools_1)
-
-    2.2 [Các tiêu chí chọn lựa Framework](#tools_2)
-
-4. [Kết luận](#end)
-
-
-## Mở đầu <a name="intro"></a>
-
-Ở bài trước [ml-quick-guide](https://dlapplications.github.io/2018-06-02-ml-quick-guide/) 
-chúng ta đã biết ngành Deep Learning có qui trình phát triển gồm 6 bước như sau. 
-
-1. Định nghĩa vấn đề (Problem definition)
-2. Thu thập dữ liệu (Data Gathering)
-3. Lọc dữ liệu (Data Parsing)
-4. Training (tạo mô hình)
-5. Testing (kiểm tra độ chính xác)
-6. Deploying (triển khai trên sản phẩm)
-
-Deep Learning Framework là một phần mềm (software) mà chúng ta dùng để thực hiện bước 4, 5 và 6. Quá trình phát triển của Deep Learning phải qua nhiều lần tinh chỉnh để đạt Accuracy cao nhất. Lựa chọn một framework phù hợp giúp chúng ta dễ dàng phát triển hơn, đẩy nhanh quá trình ra sản phẩm. 
-
-## Lựa chọn như thế nào <a name="tools"></a>
-
-Hiện tại như liệt kê ở  [Deep Learning framework](https://en.wikipedia.org/wiki/Comparison_of_deep_learning_software) có tới hàng chục Deep Learning Framework. Điều này tạo khó khăn rất lớn cho người mới bắt đầu (newbie). Mỗi framework đều có một công ty đứng sau, đều tốt, và đều dùng được trong Training, Testing và Deploying (bước 4, 5, 6 kể trên). Không có framework nào là tốt nhất, chúng ta chỉ có thể dựa trên các tiêu chí của dự án (project) để chọn ra framework thích hợp mà thôi.
-
-### Các Deep Learning framework thường dùng  <a name="tools_1"></a>
-
-Danh sách 5 framework thường dùng. 
-
-| Tên        | Quy mô của model zoo   | Interface  | OpenMP support |
-| ---------- |:-------------:| -----:     | -------:|
-| Caffe       | nhiều  | C++, Matlab, Python      | Yes |
-| MXNet      | Nhiều      |    C++, Python, Julia, Matlab, JavaScript, Go, R, Scala, Perl | Yes |
-| Tensorflow | Rất nhiều      |    Python, C++, Java, Keras | No |
-| Chainer    | Nhiều      |   Python    | No |
-| Pytorch    | Nhiều      |    Python | Yes |
-
-Chú ý: mỗi framework có một format riêng. Training, Testing, Deploying phải bằng một framework duy nhất. Trong trường hợp bất khả kháng, phải dùng Framework khác để Deploying chúng ta có thể sử dụng  [onnx](https://github.com/onnx) để chuyển đổi giữa các format với nhau. 
-
-### Các tiêu chí chọn lựa Deep Learning Framework <a name="tools_2"></a>
-
-Khi chọn lưa Deep Learning Framework, chúng ta thường dùng những tiêu chí sau đây.
-
-1. Có model zoo, công khai nhiều model có thể tái sử dụng
-2. Hỗ trợ việc load, chạy model bằng C 
-3. Dễ viết, dễ sử dụng
-
-Ở phần tiếp theo, nhóm sẽ đánh giá 5 Framework này theo 3 tiêu chí kể trên. 
-
-#### Quy mô của model zoo <a name="tools_3"></a>
-
-Sau khi định nghĩa vấn đề (Problem Definition) xong, problem sẽ được chia thành các task nhỏ hơn. Mỗi task sẽ được giải quyết bằng một lớp Deep Learning. Việc training từ con số 0 chỗ mỗi model tương ứng với các lớp (hay task) rất mất thời gian, và cũng không đảm bảo sẽ đạt Accuracy mong muốn. 
-
-Vì vậy, bước Training thường được bắt đầu bằng cách tìm những model có thể tái sử dụng cho mỗi task. Sau đấy chúng ta sẽ training lại (finetune) bằng dataset khác để chỉnh model về trạng thái mong muốn. Cho nên việc có model zoo lớn  và công khai nhiều model để chúng ta tái sử dụng là tiêu chí quan trọng nhất. 
-
-Cả 5 framework ở trên đều có model zoo rất lớn và phong phú, chứa hầu như toàn bộ các nghiên cứu (research) nổi tiếng. 
-
-1. [Caffe model zoo](https://github.com/BVLC/caffe/wiki/Model-Zoo)
-2. [Mxnet model zoo](https://mxnet.incubator.apache.org/model_zoo/index.html)
-3. [Tensorflow](https://github.com/tensorflow/models)
-5. [Chainer model zoo](https://github.com/chainer/chainercv)
-4. [Pytorch model zoo](https://github.com/pytorch/vision)
-
-
-
-| Tên        | Quy mô của model zoo   | 
-| ---------- |:-------------:| 
-| Caffe       | 4  | 
-| MXNet      | 4      |  
-| Tensorflow | 5      |
-| Chainer    | 4      |  
-| Pytorch    | 4      |   
-
-
-#### Hỗ trợ việc load, sử dụng model bằng C <a name="tools_4"></a>
-
-Sau khi training xong và có được model với Accuracy mong muốn, model này sẽ được Deploying lên trên thiết bị đầu cuối. Ví dụ như: smartphone, embedded system, mạch FPGA,  etc 
-
-Một Deep Learning Framework bao gồm rất nhiều dependency, library, tools khác nhau. Số lượng thiết bị đầu cuối (board, device) là rất lớn với đủ mọi architecture, chipset khác nhau. Điểm sơ trong [elinux](https://elinux.org/Main_Page) chúng ta có thấy tầm 20 loại board khác nhau, chưa kể các board ít người dùng không được liệt kê khác. Việc đảm bảo một Framework chạy được trên tất cả các board, device là bất khả thi.
-
-Để đảm bảo model tạo ra có thể chạy trên mọi loại board, các Deep Learning Framework hiện nay có một chức năng rất đặc biệt. Đó là xuất ra (export) chỉ các library cần thiết cho việc load và sử dụng model. Các library này sẽ nằm trong một file header C duy nhất. Chỉ việc đem file C này và compile trên board tương ứng là có thể load và sử dụng model được. 
+## 1.	Edge computing là gì?
+Edge computing là một khái niệm dùng để chỉ việc xử lí các tác vụ được thực hiện trực tiếp trên các thiết bị di động, hay còn được gọi là các thiết bị edge. Đặc điểm của các thiết bị này thường nhỏ, gọn, và sử dụng ít năng lượng. Ngược lại với việc edge computing là cloud computing, nơi mà mọi thông tin từ các thiết bị phải được gửi về cloud để xử lí. Sau khi xử lí xong, cloud sẽ gửi trả kết quả về các thiết bị đó. 
  
-Khi sử dụng model trên các board đầu cuối, quá trình tính toán phải được tăng tốc bằng cách ép toàn bộ core tham gia vào quá trình tính toán (Utilize all the cores). Phương thức đơn giản nhất để làm việc này là sử dụng  OpenMP.
+Edge computing thật ra đã được ứng dụng phổ biến trong cuộc sống hàng ngày nhưng chúng ta có thể không để ý. Ví dụ như: 
+* Camera an ninh thường nén video lại để tiết kiệm băng thông trước khi truyền về trung tâm. Chuẩn nén có thể là motion JPEG, H.264, hoặc mới nhất hiện nay là H.265. Nếu camera truyền video với tốc độ 24 frame/s và chất lượng full HD ở dạng thô, băng thông tiêu tốn sẽ lên đến 1.14 Gb/s (1920 x 1080 x 3 bytes x 24 frame/s = 142 MB/s = 1.14 Gb/s). Nếu video được nén lại theo chuẩn H.264, băng thông tiêu tốn khi này chỉ khoảng 10 Mb/s, tức là giảm khoảng 114 lần.  
+* Điện thoại thông minh cho phép chúng ta thực hiện thanh toán tự động khi mua sắm. Các điên thoại khi này không bắt buộc phải được kết nối với máy chủ mà nó đóng vai trò như một gateway chứng thực người dùng. Các điện thoại thông minh còn có thể giúp quản lí sức khỏe của người sử dụng thông việc qua đo nhịp tim, số bước đi, lượng đồ ăn hàng ngày, …  
 
-![Scene_text](/img/20180613/openMP.png) Performance Optimization on Modern Platforms
+Nhìn chung, các thiết bị edge có khả năng trực tiếp xử lí một số tác vụ dựa vào các tài nguyên sẵn có của nó, thay vì phải gửi về cloud và đợi kết quả trả về. Nhờ đó, chúng ta có thể tiết kiệm đáng kể băng thông cũng như thời gian chờ xử lí. Mặc dù đã được sử dụng trong một thời gian dài, nhưng nó chỉ mới được đề cập nhiều trong những năm gần đây. Hãy cùng nhau tìm hiểu lí do trong phần kế tiếp sau đây.
 
-Chú ý: board FPGA là trường hợp đặc biệt, nên trực tiếp sử dụng library và tools của Xilinx để đạt hiệu quả cao nhất. 
+## 2.	Tại sao edge computing lại "hot" trong những năm gần đây?
+Nếu chúng ta tưởng tượng edge computing như một quả tên lửa, thì ba động cơ chính của nó là công nghệ bán dẫn (semiconductor), Internet-of-Things (IoT), và machine learning mà nổi bật là deep learning (Hình 2).
+ 
+![Scene_text](/img/20180725/Hinh2.png) 
+Hình 2 – "Nhiên liệu" của quả tên lửa edge computing
 
-Tensorflow và MXNet là tốt nhất trong tiêu chí này. Pytorch hiện cũng có kế hoạch tương tự [Pytorch 1.0](https://pytorch.org/2018/05/02/road-to-1.0.html), nhưng chúng ta phải chờ đến cuối năm 2018 mới bắt đầu được sử dụng . Caffe tuy không có chức năng này nhưng vì được viết bằng C nên vẫn có thể compile được. Chainer thì vừa không có chức năng này, vừa không thể compile được.
+### a)	Sự phát triển của công nghệ bán dẫn (semiconductor): 
+Các chip hiện đại ngày nay không chỉ chứa nhiều cores mà còn được tích hợp các bộ xử lí chuyên dụng như bộ xử lí nén và giải nén video, các bộ xử lí mã hóa giải mã cho Wifi và Bluetooth, các bộ chuyển đổi tín hiệu từ số sang tương tự và ngược lại. Các chip này được gọi tên chung là SoC (System-on-chip hay Hệ thống trên chip). Bên cạnh việc tăng hiệu năng, giá thành của chip SoC ngày càng giảm. Nhờ vậy, các chip này ngày càng được sử dụng rộng rãi. 
 
+Ví dụ: chip SoC trên board Raspberry Pi Zero W (Hình 3) không chỉ tích hợp 1-GHz ARM core và 512 MB bộ nhớ RAM mà còn có bộ nén và giải nén full HD, 802.11 b/g/n wireless LAN, và Bluetooth năng lượng thấp. Tuy nhiên, giá thành của một board chỉ vào khoảng 10 USD.   
+ 
+![Scene_text](/img/20180725/Hinh3.png) 
+Hình 3 – Board Raspberry Pi Zero W. (Nguồn: Internet)
 
-| Tên        | Hỗ trợ việc load, chạy model bằng C    | 
-| ---------- |:-------------:| 
-| Caffe       | 2  | 
-| MXNet      | 5      |  
-| Tensorflow | 5      |
-| Chainer    | 1      |  
-| Pytorch    | 3      |   
+Nói tóm lại, sự phát triển của công nghệ bán dẫn, đặc biệt là khả năng tính toán ngày càng tăng của các chip SoC, đã tạo điều kiện cho edge computing có thể được thực hiện dễ dàng hơn.
 
-#### Dễ viết, dễ sử dụng <a name="tools_5"></a>
+### b)	Sự phát triển của IoT:
+Trong thế giới ngày nay, chúng ta đã không còn xa lạ việc các thiết bị điện tử có thể giao tiếp trực tiếp với nhau hoặc thông qua các servers. Ví dụ, trong nông nghiệp thông minh (Hình 4), các thiết bị dùng để thu thập nhiệt độ, độ ẩm, ánh sáng, phân bón, … được kết nối mạng với nhau để từ đó người nông dân biết được tình trạng cây trồng và có chế độ chăm sóc phù hợp. Tùy theo quy mô và yêu cầu cụ thể mà các mạng này có thể chứa từ vài trăm đến vài chục nghìn thiết bị như vậy. Nhờ vào công nghệ vi mạch phát triển, giá thành chip ngày càng rẻ, nên việc triển khai hàng chục nghìn thiết bị không phải là một việc quá khó khăn.
+ 
+![Scene_text](/img/20180725/Hinh4.png) 
+Hình 4 - Ứng dụng của IoT trong nông nghiệp. (Nguồn: Internet)
 
-Đây là tiêu chí khó đánh giá nhất vì quen dùng cái gì thì nó thành dễ nhất thôi. Theo cảm nhận chủ quan thì Chainer và Pytorch là 2 framework dễ viết và dễ sử dụng nhất. Với 2 framework này chỉ cần một tuần là có thể thông thạo được cách dùng. Trong khi với 3 framework còn lại có thể mất cả tháng. 
+Tuy nhiên, khi một loạt thiết bị cùng gửi trả tín hiệu về cùng một lúc sẽ dẫn đến nguy cơ nghẽn mạng. Các thông tin đã gửi đi có thể sẽ không đến được thiết bị mong muốn. Khi đó, mỗi thiết bị sẽ phải gửi đi gửi lại cùng một dữ liệu nhiều lần, dẫn đến việc tiêu tốn năng lượng. Nếu như các thiết bị này có thể xử lí tín hiệu thu thập được và chỉ gửi đi các thông tin cần thiết (ví dụ chỉ gửi thông tin nhiệt độ khi nhiệt độ cao hơn ngưỡng cho trước), chúng ta sẽ tiết kiệm được băng thông, từ đó tiết kiệm được năng lượng tiêu tốn. Nói cách khác, sự phát triển của IoT gắn liền với sự cần thiết của edge computing.
 
-| Tên        | Dễ viết, dễ sử dụng   | 
-| ---------- |:-------------:| 
-| Caffe       | 2  | 
-| MXNet      | 3      |  
-| Tensorflow | 3      |
-| Chainer    | 5      |  
-| Pytorch    | 5      |   
+### c)	Sự phát triển của deep learning. 
+Mặc dù đã ra đời từ rất lâu, machine learning, mà đặc biệt là mạng neural chỉ mới thật sự nổi lên từ năm 2012 sau màn trình diễn đầy ấn tượng của AlexNet. Lần đầu tiên, một mạng deep neural chứng tỏ được hiệu năng vượt trội so với các phương pháp machine learning truyền thống dùng rút trích đặc trưng bằng tay. Thành công của deep learning còn có sự góp phần đáng kể của công nghệ bán dẫn, mà cụ thể là các GPUs. Thật vậy, nhờ có GPUs mà thời gian training cho các mạng deep neural được rút ngắn đi nhiều lần so với việc dùng các CPUs truyền thống.  
+ 
+![Scene_text](/img/20180725/Hinh5.png) 
+Hình 5 – Kết quả cuộc thi ImageNet Challenge từ năm 2010 đến 2015. (Nguồn: M. Verhelst et al., Embedded Deep Neural Network Processing: Algorithmic and Processor Techniques Bring Deep Learning to IoT and Edge Devices,” IEEE Solid-State Circuits Magazine, vol. 9, no. 4, pp. 55-65, 2017)
 
-## Kết luận <a name="end"></a>
+Một trong những xu hướng hiện tại là làm cho các thiết bị IoT ngày càng thông minh nhờ vào machine learning hoặc deep learning. Cùng nhau xem lại các ví dụ ở Mục 1, chúng ta có thể thấy:
 
-Trong bài viết này chúng ta đã lướt sơ bộ qua 5 framework thường sử dụng trong Deep Learning. Không có framework hoàn hảo, tất cả đều mang trong mình điểm mạnh và điểm yếu riêng. Tùy vào mục đích sử dụng mà chúng ta lựa chọn framework thích hợp
+* Camera ngày càng thông minh hơn: thay vì chỉ truyền video về server, camera trong các xe thông minh có thể phát hiện và nhận dạng vật cản, từ đó đưa ra các cảnh báo hoặc ngừng khẩn cấp. Các cảnh báo này phải được xử lí trong thời gian cực nhanh nên thông tin thu nhập cần phải được xử lí tại edge, thay vì tại server (Hình 6). Ví dụ, một xe chạy tốc độ 60 km/giờ = 16.7 m/giây, hay cứ 1 giây di chuyển được 16.7 m. Độ trễ xử lí khi này phải tính bằng mili-giây chứ không thể nào bằng giây được.
+ 
+![Scene_text](/img/20180725/Hinh6.png) 
+Hình 6 – Sự kết biệt về độ trễ giữa edge và cloud computing. (Nguồn: Internet)
 
-Khi bắt đầu một dự án sử dụng Deep Learning, nếu chúng ta chưa biết hoặc không xác định được thiết bị cuối là gì thì lời khuyên là nên sử dụng Mxnet hoặc Tensorflow. Tuy nhiên, nếu chúng ta chỉ muốn học Deep Learning thôi thì lời khuyên là sử dụng các Framework dễ viết và dễ sử dụng nhất. 
+* Các điện thoại thông minh ngày nay có thể được bảo mật bằng vân tay, giọng nói, mống mắt, … Các xử lí này được thực hiện trực tiếp trên chip SoC trong điện thoại. Ngoài ra, các trợ lí ảo như Google Now có thể trả lời truy vấn mà không cần kết nối với server. Nếu các thiết bị này gửi về server xử lí, tùy theo chất lượng kết nối mà thời gian chờ có thể tính bằng vài chục giây, gây ra nhiều bất tiện cho người dùng. 
+* Các thiết bị kiểm soát bệnh liên quan đến não hoặc tim cũng cần xử lí trực tiếp. Ví dụ, người bênh động kinh cần phải đeo một thiết bị chuyên dụng bên người. Nếu não người bệnh bị nhiễu loạn, các cơn co giật sẽ xuất hiện. Lúc này các thiết bị sẽ phải tự động phát hiện và phát ra các xung điện kích vào não để triệt tiêu các cơn co giật. Các cơn co giật này đặc biệt nguy hiểm khi người bệnh đang lái xe hoặc làm các công việc có tính chất nguy hiểm. Do vậy, các thiết bị cần phải có độ trễ trong xử lí cực thấp, thường dưới 1 giây.
 
-Đối tượng của series này là newbie, các bạn chưa có kiển thức chuyên sâu về Deep Learning. Để cho các bạn nhanh chóng nắm bắt được vấn đề, những bài còn lại của series sẽ sử dụng Pytorch làm framework chính. Một số trường hợp khi cần demo trên mobile hoặc board khác sẽ chuyển qua Mxnet hoặc Tensorflow.  
+Nhìn chung, sự tiến bộ vượt bậc của công nghệ bán dẫn cũng như sự bùng nổ của IoT và deep learning trong thời gian gần đây đã tạo điều kiện cho edge computing phát triển. Theo dự đoán của Gartner (Hình 1), edge computing đang là xu hướng phát triển trong vòng 5 năm tới. Các nghiên cứu cho edge computing, đặc biệt là deep learning trên các thiết bị edge do vậy cũng sẽ tăng theo. Trong phần dưới đây, chúng ta sẽ cùng điểm qua một số nghiên cứu mới nhất cho deep learning trên thiết bị edge. 
 
-Vũ Gia Trường.
+## 3.	Các hướng nghiên cứu cho deep learning trên edge
 
+### a)	Cải tiến về model: 
+Deep learning truyền thống đòi hỏi nhiều tính toán trong khi các thiết bị edge thường bị giới hạn bởi năng lượng (thời lượng pin) cũng như khả năng xử lí (CPU và RAM thường không quá cao). Do vậy, các model cần phải được tối ưu theo hướng nhỏ gọn và giảm yêu cầu tính toán. Các cải tiến hay dùng gồm:
+
+* Train các weight ở dấu chấm tĩnh (1, 2, 4, 8, 16-bit fixed point) thay vì dấu chấm động (32-bit floating point).  
+* Lượng tử hóa các weight để giảm kích thước model.
+* Do ReLU và dropout ngày càng được sử dụng rộng rãi, các mạng neural ngày càng thưa (sparse). Khi này các weight bằng 0 sẽ ngày càng nhiều. Xử lí các phép nhân với số 0 hoặc nén các weight trở nên cấp thiết.
+* 	 …
+
+Các cuộc thi về model deep learning công suất thấp cũng thu hút nhiều sự chú ý, ví dụ như cuộc thi Low-Power Image Recognition Challenge (https://rebootingcomputing.ieee.org/lpirc). Một trong những đội thắng giải năm nay đã cải tiến model MobileNet của Google để giảm khối lượng tính toán cũng như giảm năng lượng tiêu tốn.
+
+### b)	Cải tiến về hardware:
+Các chip SoC truyền thống thường không được thiết kế tối ưu cho các ứng dụng deep learning dẫn đến thời gian tính toán sẽ tăng không đáp ứng được thời gian thực. 
+
+Năm 2016, nhóm nghiên cứu của GS. Vivienne Sze tại đại học MIT công bố và demo Eyeriss, chip xử lí CNN đầu tiên trên thế giới, tại hội nghị ISSCC (được coi như là “Oscar” của công nghệ bán dẫn thế giới). Chip này cho hiệu năng vượt trội so với GPU dùng trong các điện thoại di động, trong khi tiết kiệm năng lượng hơn gấp nhiều lần. Kể từ đó, hằng năm có ít nhất 10 đến 20 chip liên quan đến deep learning được giới thiệu tại ISSCC. Apple cũng vừa thương mại hóa chip SoC có xử lí IPCore deep learning trong năm 2017.     
+
+## 4. Kết luận
+Bài viết này mong muốn cung cấp đến bạn đọc các khái niệm cơ bản về edge computing, nguyên nhân dẫn đến sự bùng nổ của deep learning trên các thiết bị edge cũng như các ứng dụng hiện tại và tương lai. Các nghiên cứu về hướng này đang và sẽ rất hot trong thời gian tới. Các bài viết tiếp theo sẽ cung cấp kĩ hơn các nghiên cứu cũng như phương pháp triển khai deep learning trên các thiết bị edge. 
+
+Nguyễn Xuân Thuận.
